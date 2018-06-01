@@ -1,6 +1,9 @@
 import bridge.demo1.AbstractFileParser;
 import bridge.demo1.XmlParser;
 import bridge.demo1.MySqlDb;
+import bridge.demo2.AbstractReporter;
+import bridge.demo2.ExcelDataCollect;
+import bridge.demo2.Reporter1;
 import prototype.Attachment;
 import prototype.Weeklylog2;
 
@@ -72,8 +75,13 @@ public class Test {
 //        System.out.println(log_previous2.attachment.getName() +"___"+ today2.attachment.getName());
 
         //------------------桥接模式---------------------
-        AbstractFileParser parser = new XmlParser();
-        parser.setDbImpl(new MySqlDb());
-        parser.parse();
+//        AbstractFileParser parser = new XmlParser();
+//        parser.setDbImpl(new MySqlDb());
+//        parser.parse();
+        // 桥接模式 + 适配器模式
+        AbstractReporter reporter = new Reporter1();
+        reporter.setDataCollectImpl(new ExcelDataCollect());
+        reporter.report();
+
     }
 }
