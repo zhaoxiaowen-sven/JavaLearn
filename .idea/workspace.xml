@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfecb14c-9ea3-43e6-b36b-ca2370bca492" name="Default" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/composite/Component.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/composite/Composite.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/composite/Leaf.java" afterDir="false" />
@@ -9,6 +10,17 @@
       <change afterPath="$PROJECT_DIR$/src/composite/demo/Folder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/composite/demo/ImageFile.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/composite/demo/TextFile.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/AbstractReporter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/Adapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/DataCollect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/DbDataCollect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/ExcelDataCollect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/ExcelRead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/Reporter1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/bridge/demo2/Reporter2.java" afterDir="false" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
     </list>
@@ -22,47 +34,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="Component.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/composite/Component.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
               <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+=======
+      <file leaf-file-name="AbstractReporter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/AbstractReporter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding>
+                <element signature="e#162#163#0" expanded="true" />
+                <element signature="e#216#217#0" expanded="true" />
+              </folding>
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="IAdaptee.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/adapter/IAdaptee.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="42">
               <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+=======
+      <file leaf-file-name="Reporter1.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Reporter1.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" selection-start-line="5" selection-end-line="6" />
+              <folding>
+                <element signature="e#178#179#0" expanded="true" />
+              </folding>
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="ITarget.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/adapter/ITarget.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="42">
               <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+=======
+      <file leaf-file-name="Reporter2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Reporter2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#113#114#0" expanded="true" />
+                <element signature="e#177#178#0" expanded="true" />
+              </folding>
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Adapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/adapter/Adapter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
               <caret line="12" column="24" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="24" />
+=======
+      <file leaf-file-name="DataCollect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/DataCollect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="AbstractFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/composite/demo/AbstractFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
               <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+=======
+      <file leaf-file-name="DbDataCollect.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/DbDataCollect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+              <folding>
+                <element signature="e#119#120#0" expanded="true" />
+                <element signature="e#151#152#0" expanded="true" />
+              </folding>
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
@@ -70,8 +137,13 @@
       <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="477">
               <caret line="95" column="23" selection-start-line="95" selection-start-column="23" selection-end-line="95" selection-end-column="23" />
+=======
+            <state relative-caret-position="310">
+              <caret line="82" column="45" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -79,6 +151,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Folder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/composite/demo/Folder.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -89,29 +162,66 @@
                 <element signature="e#237#238#0" expanded="true" />
                 <element signature="e#385#386#0" expanded="true" />
                 <element signature="e#415#416#0" expanded="true" />
+=======
+      <file leaf-file-name="ExcelDataCollect.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/ExcelDataCollect.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+              <folding>
+                <element signature="e#145#146#0" expanded="true" />
+                <element signature="e#187#188#0" expanded="true" />
+                <element signature="e#251#252#0" expanded="true" />
+                <element signature="e#310#311#0" expanded="true" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="TextFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/composite/demo/TextFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+=======
+      <file leaf-file-name="Data.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Data.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <folding>
+                <element signature="e#95#96#0" expanded="true" />
+                <element signature="e#114#115#0" expanded="true" />
+              </folding>
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="ImageFile.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/composite/demo/ImageFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+=======
+      <file leaf-file-name="ExcelRead.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/ExcelRead.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+              <folding>
+                <element signature="e#78#79#0" expanded="true" />
+                <element signature="e#102#103#0" expanded="true" />
+              </folding>
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Composite.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/composite/Composite.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -126,6 +236,13 @@
                 <element signature="e#373#374#0" expanded="true" />
                 <element signature="e#407#408#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="Adapter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Adapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
             </state>
           </provider>
         </entry>
@@ -146,6 +263,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/src/prototype/Weekylog.java" />
+        <option value="$PROJECT_DIR$/src/prototype/ConcretePrototype.java" />
+        <option value="$PROJECT_DIR$/src/prototype/Weeklylog.java" />
+        <option value="$PROJECT_DIR$/src/prototype/Weeklylog2.java" />
+        <option value="$PROJECT_DIR$/src/prototype/Attachment.java" />
+        <option value="D:/我的文档/11002252/Documents/vchat/ChatFiles/1.java" />
+        <option value="$PROJECT_DIR$/src/adapter/Adaptee.java" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
         <option value="$PROJECT_DIR$/src/adapter/AdapteeB.java" />
         <option value="$PROJECT_DIR$/src/adapter/Target.java" />
         <option value="$PROJECT_DIR$/src/adapter/ITarget.java" />
@@ -180,6 +307,7 @@
         <option value="$PROJECT_DIR$/src/Bridge/demo1/OracleDb.java" />
         <option value="$PROJECT_DIR$/src/Bridge/demo1/MySqlDb.java" />
         <option value="$PROJECT_DIR$/src/bridge/demo2/Reporter.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/bridge/demo2/TxtDataCollect.java" />
         <option value="$PROJECT_DIR$/src/bridge/demo2/Data.java" />
         <option value="$PROJECT_DIR$/src/bridge/demo2/DataCollect.java" />
@@ -197,11 +325,29 @@
         <option value="$PROJECT_DIR$/src/composite/demo/TextFile.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/composite/demo/Folder.java" />
+=======
+        <option value="$PROJECT_DIR$/src/bridge/demo2/AbstractReporter.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/TxtDataCollect.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/Data.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/DataCollect.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/DbDataCollect.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/ExcelRead.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/Reporter1.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/Reporter2.java" />
+        <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/bridge/demo2/ExcelDataCollect.java" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="width" value="1215" />
+=======
+    <option name="x" value="151" />
+    <option name="y" value="139" />
+    <option name="width" value="1333" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
     <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -225,6 +371,36 @@
               <item name="DesignPatterns" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DesignPatterns" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+              <item name="builder" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="adapter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DesignPatterns" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bridge" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DesignPatterns" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="demo1" type="462c0819:PsiDirectoryNode" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
+            </path>
+            <path>
+              <item name="DesignPatterns" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="demo2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DesignPatterns" type="b2602c69:ProjectViewProjectNode" />
@@ -339,7 +515,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="0" width="1215" height="1008" extended-state="0" />
+=======
+    <frame x="151" y="139" width="1333" height="1008" extended-state="0" />
+    <editor active="true" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -348,11 +529,19 @@
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50113034" side_tool="true" weight="0.35034803" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49886963" visible="true" weight="0.345977" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35497835" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32873562" />
+=======
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49886963" weight="0.345977" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Designer" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32207385" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" visible="true" weight="0.32873562" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -373,7 +562,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Test.java</url>
+<<<<<<< HEAD
           <line>60</line>
+=======
+          <line>56</line>
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -391,6 +584,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/factory/VivoPhone.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -446,6 +640,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/prototype/Weeklylog2.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/factory/OppoTv.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
@@ -580,6 +777,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/bridge/demo1/XmlParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -606,12 +804,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/adapter/Adapter4.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/adapter/AbstractAdapterImpl.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/adapter/AdapteeB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -627,12 +829,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Adapter.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/adapter/AbstractAdapter.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Data.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -645,6 +851,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Reporter2.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/Abstraction.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -655,7 +864,11 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Reporter1.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/Implementor.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
@@ -673,7 +886,11 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/bridge/demo2/ExcelRead.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/RefinedAbstraction.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
@@ -684,6 +901,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/bridge/demo2/ExcelDataCollect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -707,13 +925,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/composite.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/Db.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/bridge/demo2/AbstractReporter.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/DbFile.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
@@ -724,7 +949,11 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/composite/Leaf.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/AbstractFileParser.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
           <caret line="23" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="23" />
@@ -735,14 +964,22 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/adapter/IAdaptee.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/PdfParser.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/adapter/ITarget.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/TxtParser.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
@@ -756,14 +993,22 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/composite/demo/TextFile.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/OracleDb.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/composite/demo/AbstractFile.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/MySqlDb.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
@@ -780,7 +1025,11 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/composite/Component.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo1/XmlParser.java">
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
@@ -803,6 +1052,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/composite/demo/ImageFile.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -814,11 +1064,165 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/adapter/Adapter3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/Adapter2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/Adapter4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/IAdaptee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/ITarget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/AdapteeB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/AdapteeA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/Adapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/AbstractReporter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding>
+            <element signature="e#162#163#0" expanded="true" />
+            <element signature="e#216#217#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Adapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <folding>
+            <element signature="e#95#96#0" expanded="true" />
+            <element signature="e#114#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/DataCollect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/DbDataCollect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <folding>
+            <element signature="e#119#120#0" expanded="true" />
+            <element signature="e#151#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/ExcelRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding>
+            <element signature="e#78#79#0" expanded="true" />
+            <element signature="e#102#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Reporter1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" selection-start-line="5" selection-end-line="6" />
+          <folding>
+            <element signature="e#178#179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/Reporter2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#113#114#0" expanded="true" />
+            <element signature="e#177#178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="82" column="45" selection-start-line="82" selection-start-column="45" selection-end-line="82" selection-end-column="45" />
+>>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
           <folding>
             <element signature="e#218#219#0" expanded="true" />
             <element signature="e#237#238#0" expanded="true" />
             <element signature="e#385#386#0" expanded="true" />
             <element signature="e#415#416#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bridge/demo2/ExcelDataCollect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <element signature="e#145#146#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#251#252#0" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
           </folding>
         </state>
       </provider>
