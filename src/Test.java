@@ -4,13 +4,10 @@ import bridge.demo1.MySqlDb;
 import bridge.demo2.AbstractReporter;
 import bridge.demo2.ExcelDataCollect;
 import bridge.demo2.Reporter1;
-<<<<<<< HEAD
 import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
 import composite.demo.TextFile;
-=======
->>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
 import prototype.Attachment;
 import prototype.Weeklylog2;
 
@@ -90,7 +87,6 @@ public class Test {
         reporter.setDataCollectImpl(new ExcelDataCollect());
         reporter.report();
 
-<<<<<<< HEAD
         // 组合模式
         AbstractFile file = new Folder();
         AbstractFile imageFile = new ImageFile();
@@ -99,7 +95,6 @@ public class Test {
         file.add(textFile);
         file.killVirus();
 
-=======
->>>>>>> f775a6926a6e14805d6f57e622971a4fd565334a
+
     }
 }
