@@ -4,6 +4,7 @@ import bridge.demo1.MySqlDb;
 import bridge.demo2.AbstractReporter;
 import bridge.demo2.ExcelDataCollect;
 import bridge.demo2.Reporter1;
+import chain.*;
 import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
@@ -131,6 +132,22 @@ public class Test {
 
         ProxySearcher proxySearcher = new ProxySearcher();
         proxySearcher.doSearch("sven", "age");
+
+        //--------------职责链模式------------------------
+        Director director = new Director("zf");
+        President president = new President("sw");
+        Congress congress = new Congress("people");
+        director.setApprover(president);
+        president.setApprover(congress);
+
+        PurchaseRequest purchaseRequest1 = new PurchaseRequest(500);
+        PurchaseRequest purchaseRequest2 = new PurchaseRequest(1200);
+        PurchaseRequest purchaseRequest3 = new PurchaseRequest(6000);
+
+        director.processRequest(purchaseRequest1);
+        director.processRequest(purchaseRequest2);
+        director.processRequest(purchaseRequest3);
+
 
     }
 }
