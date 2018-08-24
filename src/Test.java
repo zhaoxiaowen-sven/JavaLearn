@@ -8,8 +8,12 @@ import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
 import composite.demo.TextFile;
+import flyweight.Coordinates;
+import flyweight.IgoChessman;
+import flyweight.IgoChessmanFactory;
 import prototype.Attachment;
 import prototype.Weeklylog2;
+import proxy.ProxySearcher;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -95,6 +99,38 @@ public class Test {
         file.add(textFile);
         file.killVirus();
 
+
+        String s= "cb37490a6b7b28da09e7adb06a32f646|8.6.0|599|381220356ad1f5d4abfd0865f80e9cc6|1|0";
+        String[] s2 = s.split("\\|");
+        System.out.println(s2.length);
+
+        boolean result = true || false && false;
+
+        System.out.println(result);
+
+        //-------------享元模式------------------
+        IgoChessmanFactory factory = IgoChessmanFactory.getInstance();
+
+        IgoChessman black1, black2, black3, white1, white2;
+
+        black1 = factory.getIgoChessman("b");
+        black2 = factory.getIgoChessman("b");
+        black3 = factory.getIgoChessman("b");
+
+        white1 = factory.getIgoChessman("w");
+        white2 = factory.getIgoChessman("w");
+
+        black1.display(new Coordinates(1,2));
+        black2.display(new Coordinates(3,4));
+        black3.display(new Coordinates(5,6));
+
+        white1.display(new Coordinates(7,8));
+        white2.display(new Coordinates(9,9));
+
+        //--------------代理模式----------------------
+
+        ProxySearcher proxySearcher = new ProxySearcher();
+        proxySearcher.doSearch("sven", "age");
 
     }
 }
