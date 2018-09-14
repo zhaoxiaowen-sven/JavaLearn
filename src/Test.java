@@ -1,10 +1,11 @@
-import bridge.demo1.AbstractFileParser;
-import bridge.demo1.XmlParser;
-import bridge.demo1.MySqlDb;
 import bridge.demo2.AbstractReporter;
 import bridge.demo2.ExcelDataCollect;
 import bridge.demo2.Reporter1;
-import chain.*;
+import chain.Congress;
+import chain.Director;
+import chain.President;
+import chain.PurchaseRequest;
+import command.*;
 import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
@@ -20,7 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Test {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 //        Factory vivoFactory = new VivoFactory();
 //        vivoFactory.createMobile().call();
 //        vivoFactory.createTv().play();
@@ -101,7 +102,7 @@ public class Test {
         file.killVirus();
 
 
-        String s= "cb37490a6b7b28da09e7adb06a32f646|8.6.0|599|381220356ad1f5d4abfd0865f80e9cc6|1|0";
+        String s = "cb37490a6b7b28da09e7adb06a32f646|8.6.0|599|381220356ad1f5d4abfd0865f80e9cc6|1|0";
         String[] s2 = s.split("\\|");
         System.out.println(s2.length);
 
@@ -121,12 +122,12 @@ public class Test {
         white1 = factory.getIgoChessman("w");
         white2 = factory.getIgoChessman("w");
 
-        black1.display(new Coordinates(1,2));
-        black2.display(new Coordinates(3,4));
-        black3.display(new Coordinates(5,6));
+        black1.display(new Coordinates(1, 2));
+        black2.display(new Coordinates(3, 4));
+        black3.display(new Coordinates(5, 6));
 
-        white1.display(new Coordinates(7,8));
-        white2.display(new Coordinates(9,9));
+        white1.display(new Coordinates(7, 8));
+        white2.display(new Coordinates(9, 9));
 
         //--------------代理模式----------------------
 
@@ -147,7 +148,25 @@ public class Test {
         director.processRequest(purchaseRequest1);
         director.processRequest(purchaseRequest2);
         director.processRequest(purchaseRequest3);
+        //--------------命令模式------------------------
 
+        FBSettingWindow fbsw = new FBSettingWindow("功能键设置");
+        FunctionButton fb1, fb2;
+        fb1 = new FunctionButton("功能键1");
+        fb2 = new FunctionButton("功能键2");
+        Command command1, command2;
+//通过读取配置文件和反射生成具体命令对象
+        command1 = new HelpCommand();
+
+        command2 = new MinimizeCommand();
+//将命令对象注入功能键
+        fb1.setCommand(command1);
+        fb2.setCommand(command2);
+        fbsw.addFunctionButton(fb1);
+        fbsw.addFunctionButton(fb2);
+//        fbsw.display();
+        fb1.onClick();
+        fb2.onClick();
 
     }
 }
