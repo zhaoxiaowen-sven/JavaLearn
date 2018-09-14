@@ -8,7 +8,6 @@ public class MinimizeCommand extends Command {
         whObj = new WindowHandler();
     }
 
-    @Override
     public void execute() {
         whObj.minimize();
     }
