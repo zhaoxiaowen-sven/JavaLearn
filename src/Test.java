@@ -16,6 +16,8 @@ import flyweight.IgoChessmanFactory;
 import prototype.Attachment;
 import prototype.Weeklylog2;
 import proxy.ProxySearcher;
+import strategy.ConcreteStrategyA;
+import strategy.Context;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -155,18 +157,22 @@ public class Test {
         fb1 = new FunctionButton("功能键1");
         fb2 = new FunctionButton("功能键2");
         Command command1, command2;
-//通过读取配置文件和反射生成具体命令对象
+        //通过读取配置文件和反射生成具体命令对象
         command1 = new HelpCommand();
 
         command2 = new MinimizeCommand();
-//将命令对象注入功能键
+        //将命令对象注入功能键
         fb1.setCommand(command1);
         fb2.setCommand(command2);
         fbsw.addFunctionButton(fb1);
         fbsw.addFunctionButton(fb2);
-//        fbsw.display();
+        //        fbsw.display();
         fb1.onClick();
         fb2.onClick();
 
+         //-----------------策略模式-------------
+        Context context = new Context();
+        context.setStrategy(new ConcreteStrategyA());
+        context.algorithm();
     }
 }
