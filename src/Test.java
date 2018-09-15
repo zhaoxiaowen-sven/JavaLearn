@@ -228,8 +228,7 @@ public class Test {
         testSwitch2.off();
         testSwitch2.on();
         s1.on();
-
-
         //---------------------------
+
     }
 }
