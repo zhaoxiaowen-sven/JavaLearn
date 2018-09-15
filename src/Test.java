@@ -18,6 +18,7 @@ import prototype.Weeklylog2;
 import proxy.ProxySearcher;
 import strategy.ConcreteStrategyA;
 import strategy.Context;
+import visit.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -152,27 +153,46 @@ public class Test {
         director.processRequest(purchaseRequest3);
         //--------------命令模式------------------------
 
-        FBSettingWindow fbsw = new FBSettingWindow("功能键设置");
-        FunctionButton fb1, fb2;
-        fb1 = new FunctionButton("功能键1");
-        fb2 = new FunctionButton("功能键2");
-        Command command1, command2;
-        //通过读取配置文件和反射生成具体命令对象
-        command1 = new HelpCommand();
-
-        command2 = new MinimizeCommand();
-        //将命令对象注入功能键
-        fb1.setCommand(command1);
-        fb2.setCommand(command2);
-        fbsw.addFunctionButton(fb1);
-        fbsw.addFunctionButton(fb2);
-        //        fbsw.display();
-        fb1.onClick();
-        fb2.onClick();
+//        FBSettingWindow fbsw = new FBSettingWindow("功能键设置");
+//        FunctionButton fb1, fb2;
+//        fb1 = new FunctionButton("功能键1");
+//        fb2 = new FunctionButton("功能键2");
+//        Command command1, command2;
+//        //通过读取配置文件和反射生成具体命令对象
+//        command1 = new HelpCommand();
+//
+//        command2 = new MinimizeCommand();
+//        //将命令对象注入功能键
+//        fb1.setCommand(command1);
+//        fb2.setCommand(command2);
+//        fbsw.addFunctionButton(fb1);
+//        fbsw.addFunctionButton(fb2);
+//        //        fbsw.display();
+//        fb1.onClick();
+//        fb2.onClick();
 
          //-----------------策略模式-------------
-        Context context = new Context();
-        context.setStrategy(new ConcreteStrategyA());
-        context.algorithm();
+//        Context context = new Context();
+//        context.setStrategy(new ConcreteStrategyA());
+//        context.algorithm();
+
+        // --------------- 访问者模式------------
+
+        EmployeeList list = new EmployeeList();
+        Employee fte1,fte2,fte3,pte1,pte2;
+        fte1 = new FulltimeEmployee("张无忌",3200.00,45);
+        fte2 = new FulltimeEmployee("杨过",2000.00,40);
+        fte3 = new FulltimeEmployee("段誉",2400.00,38);
+        pte1 = new ParttimeEmployee("洪七公",80.00,20);
+        pte2 = new ParttimeEmployee("郭靖",60.00,18);
+        list.addEmployee(fte1);
+        list.addEmployee(fte2);
+        list.addEmployee(fte3);
+        list.addEmployee(pte1);
+        list.addEmployee(pte2);
+
+        FADepartment faDepartment = new FADepartment();
+        list.accept(faDepartment);
+
     }
 }
