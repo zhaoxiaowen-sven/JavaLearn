@@ -13,6 +13,10 @@ import composite.demo.TextFile;
 import flyweight.Coordinates;
 import flyweight.IgoChessman;
 import flyweight.IgoChessmanFactory;
+import observer.ConcreteObserver;
+import observer.ConcreteSubject;
+import observer.Observer;
+import observer.Subject;
 import prototype.Attachment;
 import prototype.Weeklylog2;
 import proxy.ProxySearcher;
@@ -193,6 +197,19 @@ public class Test {
 
         FADepartment faDepartment = new FADepartment();
         list.accept(faDepartment);
+
+        // --------------观察者模式---------------
+        Observer observer = new ConcreteObserver();
+        Subject subject1 = new ConcreteSubject("杨过");
+        Subject subject2 = new ConcreteSubject("郭靖");
+        Subject subject3 = new ConcreteSubject("令狐冲");
+        observer.add(subject1);
+        observer.add(subject2);
+        observer.add(subject3);
+
+        subject1.beAttacked(observer);
+
+
 
     }
 }
