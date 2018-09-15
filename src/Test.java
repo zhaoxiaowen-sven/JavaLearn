@@ -5,7 +5,6 @@ import chain.Congress;
 import chain.Director;
 import chain.President;
 import chain.PurchaseRequest;
-import command.*;
 import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
@@ -13,11 +12,15 @@ import composite.demo.TextFile;
 import flyweight.Coordinates;
 import flyweight.IgoChessman;
 import flyweight.IgoChessmanFactory;
+import observer.ConcreteObserver;
+import observer.ConcreteSubject;
+import observer.Observer;
+import observer.Subject;
 import prototype.Attachment;
 import prototype.Weeklylog2;
 import proxy.ProxySearcher;
-import strategy.ConcreteStrategyA;
-import strategy.Context;
+import state.Account;
+import state.sw.TestSwitch;
 import visit.*;
 
 import java.io.IOException;
@@ -171,7 +174,7 @@ public class Test {
 //        fb1.onClick();
 //        fb2.onClick();
 
-         //-----------------策略模式-------------
+        //-----------------策略模式-------------
 //        Context context = new Context();
 //        context.setStrategy(new ConcreteStrategyA());
 //        context.algorithm();
@@ -179,12 +182,12 @@ public class Test {
         // --------------- 访问者模式------------
 
         EmployeeList list = new EmployeeList();
-        Employee fte1,fte2,fte3,pte1,pte2;
-        fte1 = new FulltimeEmployee("张无忌",3200.00,45);
-        fte2 = new FulltimeEmployee("杨过",2000.00,40);
-        fte3 = new FulltimeEmployee("段誉",2400.00,38);
-        pte1 = new ParttimeEmployee("洪七公",80.00,20);
-        pte2 = new ParttimeEmployee("郭靖",60.00,18);
+        Employee fte1, fte2, fte3, pte1, pte2;
+        fte1 = new FulltimeEmployee("张无忌", 3200.00, 45);
+        fte2 = new FulltimeEmployee("杨过", 2000.00, 40);
+        fte3 = new FulltimeEmployee("段誉", 2400.00, 38);
+        pte1 = new ParttimeEmployee("洪七公", 80.00, 20);
+        pte2 = new ParttimeEmployee("郭靖", 60.00, 18);
         list.addEmployee(fte1);
         list.addEmployee(fte2);
         list.addEmployee(fte3);
@@ -194,5 +197,39 @@ public class Test {
         FADepartment faDepartment = new FADepartment();
         list.accept(faDepartment);
 
+        // --------------观察者模式---------------
+        Observer observer = new ConcreteObserver();
+        Subject subject1 = new ConcreteSubject("杨过");
+        Subject subject2 = new ConcreteSubject("郭靖");
+        Subject subject3 = new ConcreteSubject("令狐冲");
+        observer.add(subject1);
+        observer.add(subject2);
+        observer.add(subject3);
+
+        subject1.beAttacked(observer);
+
+        // --------------状态模式----------------
+        Account acc = new Account("段誉", 0.0);
+        acc.deposit(1000);
+        acc.withdraw(2000);
+        acc.deposit(3000);
+        acc.withdraw(4000);
+        acc.withdraw(1000);
+        acc.computeInterest();
+
+        // --------------状态模式2,没理解----------------
+
+        TestSwitch s1, testSwitch2;
+        s1 = new TestSwitch("开关1");
+        testSwitch2 = new TestSwitch("开关2");
+        s1.on();
+        testSwitch2.on();
+        s1.off();
+        testSwitch2.off();
+        testSwitch2.on();
+        s1.on();
+
+
+        //---------------------------
     }
 }
