@@ -9,6 +9,9 @@ import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
 import composite.demo.TextFile;
+import decorator.Boy;
+import decorator.CheapCloth;
+import decorator.Person;
 import flyweight.Coordinates;
 import flyweight.IgoChessman;
 import flyweight.IgoChessmanFactory;
@@ -83,7 +86,7 @@ public class Test {
 //        attachment.setName("attachment");
 //        log_previous2.attachment = attachment2;
 //
-//        Weeklylog today2 = log_previous2.clone();
+//        Weeklylog today2 = log_previous2.clone();ConcreteStrategyA
 //        log_previous2.name = "xxx";
 //        today2.attachment.setName("yyy2");
 //        System.out.println(log_previous2 == today2);
@@ -107,14 +110,11 @@ public class Test {
         file.add(textFile);
         file.killVirus();
 
+        // 装饰模式
+        Person person = new Boy();
+        CheapCloth cheapCloth = new CheapCloth(person);
+        cheapCloth.dressed();
 
-        String s = "cb37490a6b7b28da09e7adb06a32f646|8.6.0|599|381220356ad1f5d4abfd0865f80e9cc6|1|0";
-        String[] s2 = s.split("\\|");
-        System.out.println(s2.length);
-
-        boolean result = true || false && false;
-
-        System.out.println(result);
 
         //-------------享元模式------------------
         IgoChessmanFactory factory = IgoChessmanFactory.getInstance();
@@ -229,6 +229,5 @@ public class Test {
         testSwitch2.on();
         s1.on();
         //---------------------------
-
     }
 }
