@@ -5,6 +5,7 @@ import chain.Congress;
 import chain.Director;
 import chain.President;
 import chain.PurchaseRequest;
+import com.sun.javafx.collections.MappingChange;
 import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
@@ -15,6 +16,7 @@ import decorator.Person;
 import flyweight.Coordinates;
 import flyweight.IgoChessman;
 import flyweight.IgoChessmanFactory;
+import mediator.demo1.*;
 import observer.ConcreteObserver;
 import observer.ConcreteSubject;
 import observer.Observer;
@@ -28,6 +30,8 @@ import visit.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Test {
     public static void main(String[] args) {
@@ -217,7 +221,7 @@ public class Test {
         acc.withdraw(1000);
         acc.computeInterest();
 
-        // --------------状态模式2,没理解----------------
+        // --------------状态模式----------------
 
         TestSwitch s1, testSwitch2;
         s1 = new TestSwitch("开关1");
@@ -229,5 +233,21 @@ public class Test {
         testSwitch2.on();
         s1.on();
         //---------------------------
+
+        //--------------中介者模式--------------
+
+        MainBoard eMediator = new MainBoard();
+
+        CDDevice cdDevice = new CDDevice(eMediator);
+        CPU cpu = new CPU(eMediator);
+        GraphicsCard graphicCard = new GraphicsCard(eMediator);
+        SoundCard soundCard = new SoundCard(eMediator);
+
+        eMediator.mGraphicCard = graphicCard;
+        eMediator.mCpu = cpu;
+        eMediator.mSoundCard = soundCard;
+        eMediator.mCdDevice = cdDevice;
+
+        cdDevice.load();
     }
 }
