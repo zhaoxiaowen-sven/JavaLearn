@@ -201,6 +201,9 @@ public class Test {
         FADepartment faDepartment = new FADepartment();
         list.accept(faDepartment);
 
+        HRDepartment hrDepartment = new HRDepartment();
+        list.accept(hrDepartment);
+
         // --------------观察者模式---------------
         Observer observer = new ConcreteObserver();
         Subject subject1 = new ConcreteSubject("杨过");
@@ -249,5 +252,6 @@ public class Test {
         eMediator.mCdDevice = cdDevice;
 
         cdDevice.load();
+
     }
 }
