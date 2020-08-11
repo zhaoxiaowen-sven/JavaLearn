@@ -272,80 +272,17 @@ public class Test {
 //         *  b.然后根据相应的字节码转换成对应的class，
 //         *  c.然后调用newInstance()创建代理实例
 //         */
-//        // 1. 创建被代理的对象，UserService接口的实现类
-//        UserService proxy = (UserService) DynamicProxy.createProxy(new UserServiceImpl());
-//        proxy.select();
-//        proxy.update();
+        // 1. 创建被代理的对象，UserService接口的实现类
+        UserService proxy = (UserService) DynamicProxy.createProxy(new UserServiceImpl());
+        proxy.select();
+        proxy.update();
 
-        DrinkTest.test();
-
-        CompositeTest.test();
-
-        Integer i = 10;
-        Integer j = 10;
-
-        Integer i1 = 129;
-        Integer j1 = 129;
-
-//        System.out.println( "i == j" + (i ==j));
-//        System.out.println( "i1 == j1" + (i1 ==j1));
+//        DrinkTest.test();
 //
-//        String s = new String("sss");
-
-
-        String s = new String("1");
-        s.intern();
-        String s2 = "1";
-        System.out.println(s == s2);
-        System.out.println(System.identityHashCode(s));
-        System.out.println(System.identityHashCode(s2));
-
-        String s3 = new String("1") + new String("1");
-        s3.intern();
-        String s4 = "11";
-        System.out.println(s3 == s4);
-        System.out.println(System.identityHashCode(s3));
-        System.out.println(System.identityHashCode(s4));
-
-
-        String xx = "\"appComments\": [],\n" +
-                "\"app_remark\": \"拼着买，才便宜\",";
-        System.out.println("xx = " + xx.getBytes("utf-8").length + "111" + xx.length()) ;
-
-        LinkedHashMap<String,String> linkedHashMap = new LinkedHashMap<>();
-        linkedHashMap.put("1", "1");
-
-        ArrayList<String> strings = new ArrayList<>();
-        strings.add("1");
-        strings.add("2");
-        strings.add("3");
-        strings.add("3");
-        Iterator<String> stringIterator = strings.iterator();
-        while (stringIterator.hasNext()) {
-            String item = stringIterator.next();
-            System.out.println("item = " + item);
-        }
-//        stringIterator.next();
-//        stringIterator.remove();
-//        stringIterator.remove();
-
-
-//        MemoTest.test();
-//        Stack<String> stringStack = new Stack<>();
-//        stringStack.push("A");
-//        stringStack.push("B");
-//        stringStack.push("C");
+//        CompositeTest.test();
 //
-//        String hehe = stringStack.pop();
-//        System.out.println(hehe);
-
-//        StringBuilder a = new StringBuilder("Abundo");
-//        a.replace(0, 6, "Ab");
+//        ChainTest.testChain();
 //
-//        System.out.println(a.toString());
-
-        ChainTest.testChain();
-
-        new Test2().test();
+//        new Test2().test();
     }
 }
