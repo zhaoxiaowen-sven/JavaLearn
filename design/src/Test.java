@@ -1,21 +1,26 @@
 import bridge.demo2.AbstractReporter;
 import bridge.demo2.ExcelDataCollect;
 import bridge.demo2.Reporter1;
+import bridge.demo3.DrinkTest;
 import chain.Congress;
 import chain.Director;
 import chain.President;
 import chain.PurchaseRequest;
+import chain.demo1.ChainTest;
 import composite.demo.AbstractFile;
 import composite.demo.Folder;
 import composite.demo.ImageFile;
 import composite.demo.TextFile;
+import composite.demo2.CompositeTest;
 import decorator.Boy;
-import decorator.CheapCloth;
+import decorator.CheapPersonCloth;
 import decorator.Person;
 import flyweight.Coordinates;
 import flyweight.IgoChessman;
 import flyweight.IgoChessmanFactory;
+import jdk.nashorn.internal.ir.WhileNode;
 import mediator.demo1.*;
+import memento.MemoTest;
 import observer.ConcreteObserver;
 import observer.ConcreteSubject;
 import observer.Observer;
@@ -23,15 +28,20 @@ import observer.Subject;
 import prototype.Attachment;
 import prototype.Weeklylog2;
 import proxy.ProxySearcher;
+import proxy.dynamic.DynamicProxy;
+import proxy.dynamic.UserService;
+import proxy.dynamic.UserServiceImpl;
+import singleton.IdGenerator2;
 import state.Account;
 import state.sw.TestSwitch;
 import visit.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.UnsupportedEncodingException;
+import java.util.*;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
 //        Factory vivoFactory = new VivoFactory();
 //        vivoFactory.createMobile().call();
 //        vivoFactory.createTv().play();
@@ -113,7 +123,7 @@ public class Test {
 
         // 装饰模式
         Person person = new Boy();
-        CheapCloth cheapCloth = new CheapCloth(person);
+        CheapPersonCloth cheapCloth = new CheapPersonCloth(person);
         cheapCloth.dressed();
 
 
@@ -250,5 +260,92 @@ public class Test {
 
         cdDevice.load();
 
+        IdGenerator2.Instance.doSth();
+
+
+        // 设置变量可以保存动态代理类，默认名称以 $Proxy0 格式命名
+//        System.getProperties().setProperty("sun.misc.ProxyGenerator.saveGeneratedFiles", "true");
+//
+//        /*
+//         * 3.根据上面提供的信息，创建代理对象 在这个过程中，
+//         *  a.JDK会通过根据传入的参数信息动态地在内存中创建和.class 文件等同的字节码
+//         *  b.然后根据相应的字节码转换成对应的class，
+//         *  c.然后调用newInstance()创建代理实例
+//         */
+//        // 1. 创建被代理的对象，UserService接口的实现类
+//        UserService proxy = (UserService) DynamicProxy.createProxy(new UserServiceImpl());
+//        proxy.select();
+//        proxy.update();
+
+        DrinkTest.test();
+
+        CompositeTest.test();
+
+        Integer i = 10;
+        Integer j = 10;
+
+        Integer i1 = 129;
+        Integer j1 = 129;
+
+//        System.out.println( "i == j" + (i ==j));
+//        System.out.println( "i1 == j1" + (i1 ==j1));
+//
+//        String s = new String("sss");
+
+
+        String s = new String("1");
+        s.intern();
+        String s2 = "1";
+        System.out.println(s == s2);
+        System.out.println(System.identityHashCode(s));
+        System.out.println(System.identityHashCode(s2));
+
+        String s3 = new String("1") + new String("1");
+        s3.intern();
+        String s4 = "11";
+        System.out.println(s3 == s4);
+        System.out.println(System.identityHashCode(s3));
+        System.out.println(System.identityHashCode(s4));
+
+
+        String xx = "\"appComments\": [],\n" +
+                "\"app_remark\": \"拼着买，才便宜\",";
+        System.out.println("xx = " + xx.getBytes("utf-8").length + "111" + xx.length()) ;
+
+        LinkedHashMap<String,String> linkedHashMap = new LinkedHashMap<>();
+        linkedHashMap.put("1", "1");
+
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("1");
+        strings.add("2");
+        strings.add("3");
+        strings.add("3");
+        Iterator<String> stringIterator = strings.iterator();
+        while (stringIterator.hasNext()) {
+            String item = stringIterator.next();
+            System.out.println("item = " + item);
+        }
+//        stringIterator.next();
+//        stringIterator.remove();
+//        stringIterator.remove();
+
+
+//        MemoTest.test();
+//        Stack<String> stringStack = new Stack<>();
+//        stringStack.push("A");
+//        stringStack.push("B");
+//        stringStack.push("C");
+//
+//        String hehe = stringStack.pop();
+//        System.out.println(hehe);
+
+//        StringBuilder a = new StringBuilder("Abundo");
+//        a.replace(0, 6, "Ab");
+//
+//        System.out.println(a.toString());
+
+        ChainTest.testChain();
+
+        new Test2().test();
     }
 }

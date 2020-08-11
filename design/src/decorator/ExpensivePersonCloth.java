@@ -1,7 +1,7 @@
 package decorator;
 
-public class ExpensiveCloth extends Cloth {
-    public ExpensiveCloth(Person p) {
+public class ExpensivePersonCloth extends PersonCloth {
+    public ExpensivePersonCloth(Person p) {
         super(p);
     }
 

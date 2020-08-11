@@ -1,7 +1,8 @@
 package decorator;
 
-public class CheapCloth extends Cloth{
-    public CheapCloth(Person p) {
+public class CheapPersonCloth extends PersonCloth {
+
+    public CheapPersonCloth(Person p) {
         super(p);
     }
 
@@ -9,10 +10,9 @@ public class CheapCloth extends Cloth{
     public void dressed() {
         super.dressed();
         dressCheap();
-
     }
 
-    private void dressCheap(){
+    private void dressCheap() {
         System.out.println("dress Cheap");
     }
 }

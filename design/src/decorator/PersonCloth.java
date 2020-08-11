@@ -1,10 +1,9 @@
 package decorator;
 
-public abstract class Cloth extends Person {
+public class PersonCloth extends Person {
     private Person person;
 
-
-    public Cloth(Person p){
+    public PersonCloth(Person p){
         this.person = p;
     }
 
