@@ -1,4 +1,5 @@
-import sort.BubbleSort;
+import sort.InsertSort;
+import sort.SelectSort;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -8,6 +9,12 @@ public class AlgorithmTest {
 
 //        BubbleSort.sort1(arr);
 
-        BubbleSort.sort2(arr);
+//        BubbleSort.sort2(arr);
+
+//        SelectSort.sort0(arr);
+
+        InsertSort.sort0(arr);
+
+//        InsertSort.sort1(arr);
     }
 }

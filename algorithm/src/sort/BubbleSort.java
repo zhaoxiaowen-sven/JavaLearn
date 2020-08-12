@@ -21,9 +21,9 @@ public class BubbleSort {
                     source[j] = temp;
                 }
             }
-            dump(source);
+            SortHelper.dump(source);
         }
-        dump(source);
+        SortHelper.dump(source);
     }
 
     // 冒泡排序，两两相邻比较并交换
@@ -43,9 +43,9 @@ public class BubbleSort {
                     source[j - 1] = temp;
                 }
             }
-            dump(source);
+            SortHelper.dump(source);
         }
-        dump(source);
+        SortHelper.dump(source);
     }
 
 
@@ -72,17 +72,9 @@ public class BubbleSort {
             if (!flag) {
                 break;
             }
-            dump(source);
+            SortHelper.dump(source);
         }
-        dump(source);
+        SortHelper.dump(source);
     }
 
-
-    private static void dump(int[] source) {
-        StringBuilder builder = new StringBuilder();
-        for (int element : source) {
-            builder.append(element).append(", ");
-        }
-        System.out.println(builder.toString());
-    }
 }
