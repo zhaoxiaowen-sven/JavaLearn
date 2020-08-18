@@ -1,5 +1,7 @@
 import sort.InsertSort;
 import sort.SelectSort;
+import strmatch.BFMatch;
+import strmatch.KMPMatch;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -13,8 +15,17 @@ public class AlgorithmTest {
 
 //        SelectSort.sort0(arr);
 
-        InsertSort.sort0(arr);
+//        InsertSort.sort0(arr);
 
 //        InsertSort.sort1(arr);
+
+        // -----字符串匹配start------------
+        String source = "abababca";
+        String match = "abc";
+//        BFMatch.match(source, match);
+
+        KMPMatch.match(source, match);
+
+        // -----字符串匹配end--------------
     }
 }
