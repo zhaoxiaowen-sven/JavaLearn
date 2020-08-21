@@ -12,7 +12,7 @@ public class KMPMatch {
         char[] sourceArr = source.toCharArray();
         char[] matchArr = match.toCharArray();
         // 获取子串的next数组
-        int[] next = getNext(matchArr);
+        int[] next = getNextMore(matchArr);
 
         int i = 0;
         int j = 0;
@@ -44,13 +44,40 @@ public class KMPMatch {
         }
         int[] next = new int[size];
         next[0] = -1;
-        int k = -1;
-        int i = 0;
-        while (i < size - 1) {
-            if (k == -1 || next[i] == next[k]) {
-                i++;
+        int k = -1; // k代表前缀
+        int j = 0; // j代表后缀
+        while (j < size - 1) {
+            if (k == -1 || match[k] == match[j]) {
+                j++;
                 k++;
-                next[i] = k;
+                next[j] = k;
+            } else {
+                k = next[k];
+            }
+        }
+        return next;
+    }
+
+    // 回溯数组
+    private static int[] getNextMore(char[] match) {
+        int size = match == null ? 0 : match.length;
+        if (size == 0) {
+            return new int[]{0};
+        }
+        int[] next = new int[size];
+        next[0] = -1;
+        int k = -1; // k代表前缀
+        int j = 0; // j代表后缀
+        while (j < size - 1) {
+            if (k == -1 || match[k] == match[j]) {
+                j++;
+                k++;
+                if (match[k] != match[j]) {
+                    next[j] = k;
+                } else {
+                    // 前缀和后缀相同情况下，那么当前后缀的回溯==前缀的回溯
+                    next[j] = next[k];
+                }
             } else {
                 k = next[k];
             }

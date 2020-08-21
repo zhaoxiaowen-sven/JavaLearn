@@ -21,11 +21,15 @@ public class AlgorithmTest {
 
         // -----字符串匹配start------------
         String source = "abababca";
-        String match = "abc";
+        String match = "abcdabd";
 //        BFMatch.match(source, match);
 
         KMPMatch.match(source, match);
 
         // -----字符串匹配end--------------
+
+//        for (int i=0;i <10; i++) {
+//            if (i==3) break;
+//        }
     }
 }
