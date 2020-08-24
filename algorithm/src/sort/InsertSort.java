@@ -15,7 +15,9 @@ public class InsertSort {
                 //若前一位值大于当前位置，前一位向后移动一位
                 source[j] = source[j - 1];
             }
-            source[j] = temp; // 将值插入到合适的位置
+            if (j != i) {
+                source[j] = temp; // 将值插入到合适的位置
+            }
             SortHelper.dump(source);
         }
         SortHelper.dump(source);
