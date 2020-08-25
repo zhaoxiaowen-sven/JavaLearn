@@ -1,8 +1,4 @@
-import sort.InsertSort;
-import sort.SelectSort;
-import sort.ShellSort;
-import strmatch.BFMatch;
-import strmatch.KMPMatch;
+import sort.MergeSort;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -18,7 +14,9 @@ public class AlgorithmTest {
 
 //        InsertSort.sort0(arr);
 
-        ShellSort.sort0(arr);
+//        ShellSort.sort0(arr);
+
+        MergeSort.sort0(arr);
 
 //        InsertSort.sort1(arr);
 

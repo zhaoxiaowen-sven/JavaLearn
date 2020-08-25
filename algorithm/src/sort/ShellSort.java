@@ -10,7 +10,7 @@ public class ShellSort {
                 int temp = source[i];
                 // j表示向前间隔多少位
                 int j = i - step;
-                // 当前位小于
+                // 从小到大排序，前面的数 > 后面的数，向后移动
                 while (j >= 0 && source[j] > temp) {
                     source[j + step] = source[j];
                     j -= step;
