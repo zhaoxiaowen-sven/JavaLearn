@@ -1,8 +1,10 @@
 import sort.MergeSort;
+import sort.QuickSort;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
         int[] arr = new int[]{9, 1, 5, 8, 3, 7, 4, 6, 2};
+        int[] arr2 = new int[]{3, 4, 1, 5, 2};
 
 //        BubbleSort.sort0(arr);
 
@@ -16,7 +18,9 @@ public class AlgorithmTest {
 
 //        ShellSort.sort0(arr);
 
-        MergeSort.sort0(arr);
+//        MergeSort.sort0(arr);
+
+        QuickSort.sort0(arr2);
 
 //        InsertSort.sort1(arr);
 
