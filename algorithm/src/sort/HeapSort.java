@@ -3,7 +3,6 @@ package sort;
 public class HeapSort {
 
     public static void sort0(int[] source) {
-
         int n = source.length;
         // 建堆，从中间节点开始，中间节点必有子节点
         // 建堆的过程先自下而上，在自上而下

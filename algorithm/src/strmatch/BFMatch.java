@@ -6,12 +6,6 @@ package strmatch;
 public class BFMatch {
 
     public static void match(String source, String match) {
-        int lenSource = source == null ? 0 : source.length();
-        int lenMatch = match == null ? 0 : match.length();
-        if (lenSource == 0 || lenMatch == 0 || lenSource < lenMatch) {
-            return;
-        }
-
         char[] sourceArr = source.toCharArray();
         char[] matchArr = match.toCharArray();
 
