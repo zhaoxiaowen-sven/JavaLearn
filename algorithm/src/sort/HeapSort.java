@@ -27,7 +27,7 @@ public class HeapSort {
      * @param target      待维护节点下标
      */
     private static void heapify(int[] source, int n, int target) {
-        // large 表示当前最大值
+        // large 表示当前最大值索引
         int large = target;
         int leftSon = target * 2 + 1;
         int rightSon = target * 2 + 2;
