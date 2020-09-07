@@ -2,6 +2,8 @@ import sort.HeapSort;
 import sort.MergeSort;
 import sort.QuickSort;
 
+import java.util.HashMap;
+
 public class AlgorithmTest {
     public static void main(String[] args) {
         int[] arr = new int[]{9, 1, 5, 8, 3, 7, 4, 6, 2};
