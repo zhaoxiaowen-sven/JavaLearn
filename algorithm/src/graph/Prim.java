@@ -1,12 +1,17 @@
 package graph;
 
+import java.lang.reflect.Array;
+
 public class Prim {
     public static final int INF = 65535;
     public static void miniTree(int[][] graph) {
         int n = graph.length;
         // 边的集合,访问过的顶点标记为0
         // 初始化为第0行的数组
-        int[] lowCost = graph[0];
+        int[] lowCost = new int[n];
+        for (int i = 0; i < n; i++) {
+            lowCost[i] = graph[0][i];
+        }
         // 记录访问的节点顺序
         int[] path = new int[n];
         // 路径长度
@@ -39,7 +44,8 @@ public class Prim {
         }
         System.out.println(sum);
         for (int i : path) {
-            System.out.println(i);
+            System.out.print(i + "_");
         }
+        System.out.print("\n");
     }
 }

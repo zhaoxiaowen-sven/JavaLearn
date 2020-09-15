@@ -45,7 +45,7 @@ public class AlgorithmTest {
                 {INF, 3, 6, INF, 0, 6},
                 {INF, INF, 4, 2, 6, 0},
         };
-//        Prim.miniTree(graph);
+        Prim.miniTree(graph);
 
         Kruskal.miniTree(graph);
     }
