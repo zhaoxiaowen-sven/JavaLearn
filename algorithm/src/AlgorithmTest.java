@@ -1,8 +1,7 @@
-import sort.HeapSort;
-import sort.MergeSort;
-import sort.QuickSort;
+import graph.Kruskal;
+import graph.Prim;
 
-import java.util.HashMap;
+import static graph.Prim.INF;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class AlgorithmTest {
 
 //        QuickSort.sort0(arr2);
 
-        HeapSort.sort0(arr);
+//        HeapSort.sort0(arr);
 
 //        InsertSort.sort1(arr);
 
@@ -36,5 +35,18 @@ public class AlgorithmTest {
 //        KMPMatch.match(source, match);
 
         // -----字符串匹配end--------------
+
+        int[][] graph = new int[][]{
+                //A,B, C, D,  E,  F
+                {0, 6, 1, 5, INF, INF},
+                {6, 0, 5, INF, 3, INF},
+                {1, 5, 0, 5, 6, 4},
+                {5, INF, 5, 0, INF, 2},
+                {INF, 3, 6, INF, 0, 6},
+                {INF, INF, 4, 2, 6, 0},
+        };
+//        Prim.miniTree(graph);
+
+        Kruskal.miniTree(graph);
     }
 }
