@@ -1,16 +1,15 @@
 package graph;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 
 public class Kruskal {
     public static final int INF = 65535;
 
-    public static void miniTree(int[][] arr) {
-        int len = arr.length;
+    public static void miniTree(int[][] graph) {
+        int len = graph.length;
         //1.生成边的列表
-        ArrayList<Edge> edgeList = getEdges(arr, len);
+        ArrayList<Edge> edgeList = getEdges(graph, len);
         //2.对边进行排序
         sortEdge(edgeList);
         //3.初始化的parent数组值都为0，理解为顶点都是根节点
