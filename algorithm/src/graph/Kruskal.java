@@ -3,8 +3,9 @@ package graph;
 import java.util.ArrayList;
 import java.util.Comparator;
 
+import static graph.Constants.INF;
+
 public class Kruskal {
-    public static final int INF = 65535;
 
     public static void miniTree(int[][] graph) {
         int len = graph.length;

@@ -1,7 +1,5 @@
-import graph.Kruskal;
-import graph.Prim;
-
-import static graph.Prim.INF;
+import graph.Constants;
+import graph.Dijkstra;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -36,17 +34,12 @@ public class AlgorithmTest {
 
         // -----字符串匹配end--------------
 
-        int[][] graph = new int[][]{
-                //A,B, C, D,  E,  F
-                {0, 6, 1, 5, INF, INF},
-                {6, 0, 5, INF, 3, INF},
-                {1, 5, 0, 5, 6, 4},
-                {5, INF, 5, 0, INF, 2},
-                {INF, 3, 6, INF, 0, 6},
-                {INF, INF, 4, 2, 6, 0},
-        };
-        Prim.miniTree(graph);
+        // --- 最小生成树 -----------
+//        Prim.miniTree(Constants.GRAPH);
 
-        Kruskal.miniTree(graph);
+//        Kruskal.miniTree(Constants.GRAPH);
+
+        // --- 最短路径 -----------
+        Dijkstra.minPath(Constants.GRAPH2);
     }
 }

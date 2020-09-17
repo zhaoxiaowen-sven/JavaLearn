@@ -1,9 +1,8 @@
 package graph;
 
-import java.lang.reflect.Array;
+import static graph.Constants.INF;
 
 public class Prim {
-    public static final int INF = 65535;
     public static void miniTree(int[][] graph) {
         int n = graph.length;
         // 边的集合,访问过的顶点标记为0
