@@ -1,5 +1,6 @@
 import graph.Constants;
 import graph.Dijkstra;
+import graph.Floyd;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -40,6 +41,8 @@ public class AlgorithmTest {
 //        Kruskal.miniTree(Constants.GRAPH);
 
         // --- 最短路径 -----------
-        Dijkstra.minPath(Constants.GRAPH2);
+        //Dijkstra.minPath(Constants.GRAPH2);
+
+        Floyd.minPath(Constants.GRAPH2);
     }
 }

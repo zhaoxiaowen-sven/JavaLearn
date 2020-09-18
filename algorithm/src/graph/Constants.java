@@ -17,6 +17,6 @@ public class Constants {
             {0, 2, 3, INF},
             {2, 0, INF, 3},
             {3, INF, 0, 1},
-            {INF, 3, 0, INF},
+            {INF, 3, 1, 0},
     };
 }
