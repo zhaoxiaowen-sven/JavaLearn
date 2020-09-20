@@ -41,7 +41,7 @@ public class AlgorithmTest {
 //        Kruskal.miniTree(Constants.GRAPH);
 
         // --- 最短路径 -----------
-        //Dijkstra.minPath(Constants.GRAPH2);
+//        Dijkstra.minPath(Constants.GRAPH2, 1);
 
         Floyd.minPath(Constants.GRAPH2);
     }

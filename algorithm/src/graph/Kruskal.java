@@ -14,6 +14,7 @@ public class Kruskal {
         //2.对边进行排序
         sortEdge(edgeList);
         //3.初始化的parent数组值都为0，理解为顶点都是根节点
+        // parent 数组用来查找节点的根节点
         int[] parent = new int[len];
 
         //3.对边进行遍历，权值从低到高
@@ -21,7 +22,7 @@ public class Kruskal {
         for (Edge edge : edgeList) {
             int root1 = findRoot(parent, edge.from);
             int root2 = findRoot(parent, edge.to);
-            if (root1 != root2) { // 判断是否形成了环
+            if (root1 != root2) { // 判断是否形成了环，如果不同就可以合并2个节点或者树，让他们有相同的根
                 parent[root2] = root1; // 两个顶点组成树
                 System.out.println("edge from = " + edge.from + ", to = " + edge.to + ", weight = " + edge.weight);
                 edgeCount++;
@@ -59,9 +60,9 @@ public class Kruskal {
             }
         });
 
-//        for (Edge edge : edgeList) {
-//            System.out.println(edge);
-//        }
+    //for (Edge edge : edgeList) {
+    //      System.out.println(edge);
+    //    }
     }
 
     static class Edge {

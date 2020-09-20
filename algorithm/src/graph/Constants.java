@@ -14,9 +14,9 @@ public class Constants {
 
     public static int[][] GRAPH2 = new int[][]{
             //A,B, C, D,
-            {0, 2, 3, INF},
-            {2, 0, INF, 3},
-            {3, INF, 0, 1},
-            {INF, 3, 1, 0},
+            {0, 2, 3, INF}, //A
+            {2, 0, INF, 3}, // B
+            {3, INF, 0, 1}, //C
+            {INF, 3, 1, 0}, // D
     };
 }
