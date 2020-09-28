@@ -1,6 +1,9 @@
-import graph.Constants;
 import graph.Dijkstra;
 import graph.Floyd;
+import search.BinarySearch;
+import search.Constants;
+import search.FibonacciSearch;
+import search.InsertSearch;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -43,6 +46,13 @@ public class AlgorithmTest {
         // --- 最短路径 -----------
 //        Dijkstra.minPath(Constants.GRAPH2, 1);
 
-        Floyd.minPath(Constants.GRAPH2);
+//        Floyd.minPath(Constants.GRAPH2);
+
+        // ---- 查找 -----
+//        BinarySearch.search(Constants.sortedList, 2);
+
+//        InsertSearch.search(Constants.sortedList, 2);
+
+        FibonacciSearch.search(Constants.sortedList, 0);
     }
 }
