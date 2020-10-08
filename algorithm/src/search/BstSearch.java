@@ -110,16 +110,30 @@ public class BstSearch {
                     return treeNode.left;
                 }
                 // 找到节点右子树的最小值，后继节点
-                TreeNode minNode = getMaxPreNode(treeNode.right);
+                TreeNode minNode = minRightNode(treeNode.right);
                 // 用后继节点替换删除节点
                 treeNode.data = minNode.data;
                 // 将后继节点删除
                 treeNode.right = delete(minNode, minNode.data);
+
+                // 第二种方式
+//                TreeNode maxNode = maxLeftNode(treeNode.left);
+//                treeNode.data = maxNode.data;
+//                treeNode.left = delete(maxNode, maxNode.data);
             }
             return treeNode;
         }
 
-        private TreeNode getMaxPreNode(TreeNode targetNode) {
+        // 左子树的最大值
+        private TreeNode maxLeftNode(TreeNode node) {
+            while (node.right != null) {
+                node = node.right;
+            }
+            return node;
+        }
+
+        // 右子树的最小值
+        private TreeNode minRightNode(TreeNode targetNode) {
             while (targetNode.left != null) {
                 targetNode = targetNode.left;
             }
