@@ -1,9 +1,6 @@
 import graph.Dijkstra;
 import graph.Floyd;
-import search.BinarySearch;
-import search.Constants;
-import search.FibonacciSearch;
-import search.InsertSearch;
+import search.*;
 
 public class AlgorithmTest {
     public static void main(String[] args) {
@@ -53,6 +50,8 @@ public class AlgorithmTest {
 
 //        InsertSearch.search(Constants.sortedList, 2);
 
-        FibonacciSearch.search(Constants.sortedList, 0);
+//        FibonacciSearch.search(Constants.sortedList, 0);
+
+        BstSearch.test();
     }
 }

@@ -1,8 +1,7 @@
 package search;
 
 public class BinarySearch {
-
-    public static synchronized int search(int[] arr, int key) {
+    public static int search(int[] arr, int key) {
         int find = -1;
         int low = 0;
         int high = arr.length;
