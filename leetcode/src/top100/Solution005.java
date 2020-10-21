@@ -1,6 +1,6 @@
 package top100;
 
-public class solution005 {
+public class Solution005 {
 
     public String longestPalindrome(String s) {
         int start = 0;
@@ -57,5 +57,10 @@ public class solution005 {
             }
         }
         return s.substring(start, start + max);
+    }
+
+    public void test() {
+        System.out.println(longestPalindrome("babad"));
+        System.out.println(longestPalindrome2("babad"));
     }
 }
