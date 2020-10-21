@@ -9,7 +9,7 @@ public class Solution005 {
             int oddLen = expandAroundCenter(s, i, i);
             int evenLen = expandAroundCenter(s, i, i + 1);
             int max = Math.max(oddLen, evenLen);
-            if (max > end - start) {
+            if (max > end - start) { // end， start 都是索引，end - start + 1 才是子串的真正长度
                 end = i + max / 2;
                 // 综合偶数回文和奇数回文的表达式
                 start = i - (max - 1) / 2;
