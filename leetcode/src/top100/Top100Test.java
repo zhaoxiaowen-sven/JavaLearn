@@ -6,6 +6,8 @@ public class Top100Test {
 //        new Solution002().test();
 //        new Solution003().test();
 //        new Solution004().test();
-        new Solution005().test();
+//        new Solution005().test();
+//        new Solution007().test();
+        new Solution008().test();
     }
 }
