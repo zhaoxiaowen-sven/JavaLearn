@@ -40,7 +40,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.*;
 
-public class Test {
+public class DesignTest {
     public static void main(String[] args) throws UnsupportedEncodingException {
 //        Factory vivoFactory = new VivoFactory();
 //        vivoFactory.createMobile().call();
