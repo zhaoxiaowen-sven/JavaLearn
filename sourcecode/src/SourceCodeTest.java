@@ -5,6 +5,7 @@ public class SourceCodeTest {
 
 //        VolatileTest.getInstance();
 //        SynchronizedTest.testJOL();
-        SynchronizedTest.testUpgrade();
+//        SynchronizedTest.testBiasLock();
+        SynchronizedTest.lightLock();
     }
 }

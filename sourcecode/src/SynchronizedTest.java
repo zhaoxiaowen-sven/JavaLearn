@@ -1,3 +1,4 @@
+import com.sun.xml.internal.bind.v2.model.annotation.RuntimeAnnotationReader;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.vm.VM;
 
@@ -10,13 +11,10 @@ public class SynchronizedTest {
 
     static A a ;
 
-    public static void testUpgrade() {
+    public static void testBiasLock() {
 
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        // 偏向锁初始化
+//        sleep(5000);
 
         a = new A();
 
@@ -26,6 +24,62 @@ public class SynchronizedTest {
 
         afterLock();
     }
+
+    private static void sleep(long mills) {
+        try {
+            Thread.sleep(mills);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void biasLock() {
+
+    }
+
+    public static void lightLock() {
+        a = new A();
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+//                sleep(3000);
+                sync("thread1");
+            }
+        });
+        thread1.start();
+        join(thread1);
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                sync("thread2");
+            }
+        });
+
+        thread2.start();
+//        join(thread2);
+//        sync();
+    }
+
+    private static void heavyLock() {
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+//                sleep(3000);
+                sync();
+            }
+        });
+
+        Thread thread2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                sync();
+            }
+        });
+
+        thread1.start();
+        thread2.start();
+    }
+
 
     private static void beforeLock() {
         System.out.println("=========beforeLock========");
@@ -39,6 +93,23 @@ public class SynchronizedTest {
     }
 
 
+    private static void sync(String s) {
+        synchronized (a) {
+            System.out.println("=========locking========" + s);
+            System.out.println(ClassLayout.parseInstance(a).toPrintable());
+            x++;
+        }
+    }
+
+
+    private static void join(Thread thread) {
+        try {
+            thread.join();
+        } catch (Exception e) {
+
+        }
+
+    }
     private static void sync() {
         synchronized (a) {
             System.out.println("=========locking========");
