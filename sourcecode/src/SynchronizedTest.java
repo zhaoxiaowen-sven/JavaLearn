@@ -14,8 +14,8 @@ public class SynchronizedTest {
 
     public static void test() {
 //        noLock();
-        biasLock();
-//        lightLock();
+//        biasLock();
+        lightLock();
 //        heavyLock();
     }
 
@@ -36,6 +36,7 @@ public class SynchronizedTest {
     }
 
     public static void lightLock() {
+        // 是否偏向延迟会有2种结果，解释https://blog.csdn.net/qq_36434742/article/details/106876862
         sleep(5000);
         a = new A();
         beforeLock();
