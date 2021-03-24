@@ -1,6 +1,6 @@
 import sun.misc.Unsafe;
 
-public class UnsafeTest {
+public class UnSafeTest {
 
     static Unsafe u;
     static {
