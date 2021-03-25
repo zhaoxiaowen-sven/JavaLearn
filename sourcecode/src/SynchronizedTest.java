@@ -8,14 +8,16 @@ public class SynchronizedTest {
 
     //打印对应的对象头信息
     static class A {
+        String s = "abc";
     }
 
     static A a = new A();
 
     public static void test() {
+        testJOL();
 //        noLock();
 //        biasLock();
-        lightLock();
+//        lightLock();
 //        heavyLock();
     }
 
