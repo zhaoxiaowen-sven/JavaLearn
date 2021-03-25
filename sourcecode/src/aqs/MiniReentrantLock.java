@@ -66,6 +66,12 @@ public class MiniReentrantLock implements MiniLock {
         Node prev;
 
         Node next;
+
+        public Node(Thread thread) {
+            this.thread = thread;
+        }
+
+        public Node() {}
     }
 
     @Override
@@ -82,11 +88,46 @@ public class MiniReentrantLock implements MiniLock {
      * 2、失败
      */
     private void acquire(int arg) {
+        if (!tryAcquire(arg)) {
+            //  1.尝试抢锁失败，
+            //    1.需要将当前线程封装成node，加入到队列中
+            //    2.挂起当前线程
+            // 2、尝试唤醒：
+            //   1.检查当前节点是否是HEAD.next 拥有抢占权限，当然也不一定能抢占到
+            //   2.抢占失败
+            //     抢占成功：将当前线程设置为excluThread，head.prev出队
+            //     抢占失败：等待唤醒
+            Thread current = Thread.currentThread();
+            Node newNode = new Node(current);
+
+        }
+    }
+
+    private void enqNode(Node node) {
+        for (;;) {
+
+        }
+
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.prev = tail;
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
+
+    /**
+     *
+     */
+    private void addWaiter() {
 
     }
 
     private boolean tryAcquire(int arg) {
         Thread current = Thread.currentThread();
+        // 没有等待的线程
         if (state == 0) {
             // 从队列中获取
             if (!hasQueuedPredecessors() && compareAndSetState(0, arg)) {
