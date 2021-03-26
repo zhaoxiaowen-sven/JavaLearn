@@ -1,16 +1,27 @@
 package aqs;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 public class AQSTest {
 
     static final MiniReentrantLock lock = new MiniReentrantLock();
+    ReentrantLock reentrantLock = new ReentrantLock();
 
     public static void test() {
+        testMiniReentrantLock();
+    }
+
+
+    public static void testMiniReentrantLock() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 lock.lock();
                 try {
-                    System.out.println("thread 1");
+                    sync("thread 1");
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 } finally {
                     lock.unlock();
                 }
@@ -20,13 +31,17 @@ public class AQSTest {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                lock.lock();
-                try {
-                    System.out.println("thread 2");
-                } finally {
-                    lock.unlock();
-                }
+                sync("thread 2");
             }
         }).start();
+    }
+
+    private static void sync(String s) {
+        lock.lock();
+        try {
+            System.out.println(s);
+        } finally {
+            lock.unlock();
+        }
     }
 }

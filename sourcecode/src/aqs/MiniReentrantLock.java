@@ -112,6 +112,7 @@ public class MiniReentrantLock implements MiniLock {
             int c = getState();
             c = c + arg;
             state = c;
+            System.out.println("state = " + state);
             return true;
         }
         return false;
@@ -243,13 +244,13 @@ public class MiniReentrantLock implements MiniLock {
         }
     }
 
-
     private boolean tryRelease(int arg) {
         if (exclusiveOwnerThread != Thread.currentThread()) {
             throw new RuntimeException("should lock before");
         }
         // 这里不存在并发，
         int c = getState() - arg;
+        System.out.println("state = " + c);
         if (c == 0) {
             this.exclusiveOwnerThread = null;
             this.state = c;
