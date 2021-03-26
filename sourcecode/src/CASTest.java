@@ -1,13 +1,44 @@
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CASTest {
 
     private volatile int count = 0;
-    private final int size = 10;
-    public  void test() {
+    private final int size = 1000;
 
+    final AtomicInteger atomicInteger = new AtomicInteger(0);
+
+
+    public void test () {
+        testAtom();
+//        casFork();
+    }
+
+    private void testAtom() {
         CountDownLatch countDownLatch = new CountDownLatch(size);
-        for (int i = 0 ; i < size ; i++ ) {
+        for (int i = 0; i < size; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    atomicInteger.getAndIncrement();
+                    countDownLatch.countDown();
+                }
+            }).start();
+        }
+        try {
+            countDownLatch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(atomicInteger.get());
+    }
+
+
+
+    private void casFork() {
+        CountDownLatch countDownLatch = new CountDownLatch(size);
+        for (int i = 0; i < size; i++) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -16,8 +47,7 @@ public class CASTest {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    for (int i = 0 ; i < size; i ++) {
-//                        count ++ ;
+                    for (int i = 0; i < size; i++) {
                         add();
                     }
                     countDownLatch.countDown();
@@ -45,8 +75,8 @@ public class CASTest {
     }
 
     private void add() {
-        int exceptCount ;
-        while (!cas(exceptCount = getCount(), exceptCount+1)){
+        int exceptCount;
+        while (!cas(exceptCount = getCount(), exceptCount + 1)) {
         }
     }
 
