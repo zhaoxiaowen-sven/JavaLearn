@@ -1,5 +1,6 @@
 package aqs;
 
+import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class AQSTest {
@@ -8,9 +9,25 @@ public class AQSTest {
     ReentrantLock reentrantLock = new ReentrantLock();
 
     public static void test() {
-        testMiniReentrantLock();
+//        testMiniReentrantLock();
+        testAcquired();
     }
 
+
+    public static void testAcquired() {
+        boolean failed = true;
+        try {
+//            for (; ; ) {
+
+                System.out.println("park");
+//
+            throw new Error("make error");
+//                LockSupport.park();
+//            }
+        } finally {
+            System.out.println("finally");
+        }
+    }
 
     public static void testMiniReentrantLock() {
         new Thread(new Runnable() {
