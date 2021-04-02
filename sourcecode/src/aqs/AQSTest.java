@@ -10,30 +10,30 @@ public class AQSTest {
     final static ReentrantLock reentrantLock = new ReentrantLock();
 
     public static void test() {
-//        testMiniReentrantLock();
+        //        testMiniReentrantLock();
 //        testAcquired();
-//        new ConditionTest().test();
+        new ConditionTest().test();
 //        Thread.currentThread().interrupt();
 //        Thread.interrupted()
 
-       Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                testInterrupt("thread1");
-            }
-        });
-
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                testInterrupt("thread2");
-            }
-        });
-
-        thread1.start();
-        thread2.start();
-        System.out.println("中断了");
-        thread2.interrupt();
+//       Thread thread1 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                testInterrupt("thread1");
+//            }
+//        });
+//
+//        Thread thread2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                testInterrupt("thread2");
+//            }
+//        });
+//
+//        thread1.start();
+//        thread2.start();
+//        System.out.println("中断了");
+//        thread2.interrupt();
     }
 
 

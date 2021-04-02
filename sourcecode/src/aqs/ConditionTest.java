@@ -9,8 +9,8 @@ public class ConditionTest {
     private Lock lock = new ReentrantLock();
     private Condition condition = lock.newCondition();
 
-    public  void test() {
-
+    public void test() {
+        // 等待
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -18,6 +18,7 @@ public class ConditionTest {
             }
         }).start();
 
+        // 唤醒
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -26,13 +27,12 @@ public class ConditionTest {
         }).start();
     }
 
-
     private void conditionWait() {
+        //
         lock.lock();
         try {
             try {
                 System.out.println("conditionWait");
-
                 condition.await();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -47,15 +47,10 @@ public class ConditionTest {
         lock.lock();
         try {
             System.out.println("conditionSignal");
-
             condition.signal();
         } finally {
             System.out.println("signal finally");
-
             lock.unlock();
         }
-
     }
-
-
 }
