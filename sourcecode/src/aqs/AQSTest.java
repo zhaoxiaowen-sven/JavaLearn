@@ -4,6 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class AQSTest {
 
@@ -38,6 +39,19 @@ public class AQSTest {
         JUCUtilTest.test();
     }
 
+    private static void testReadWriteLock() {
+        ReentrantReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+        ReentrantReadWriteLock.ReadLock readLock = readWriteLock.readLock();
+        ReentrantReadWriteLock.WriteLock writeLock = readWriteLock.writeLock();
+
+        readLock.lock();
+        readLock.unlock();
+
+        writeLock.lock();
+        writeLock.unlock();
+
+
+    }
 
     public static void testInterrupt(String sleep) {
 

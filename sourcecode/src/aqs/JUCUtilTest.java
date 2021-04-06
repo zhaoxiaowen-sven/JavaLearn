@@ -94,27 +94,24 @@ public class JUCUtilTest {
     private static void SemaphoreTest() {
         Semaphore semaphore = new Semaphore(2, true);
         int size = 6;
-        ExecutorService service = Executors.newFixedThreadPool(size);
         for (int i = 0; i < size; i++) {
             final int index = i;
-            service.execute(new Runnable() {
+           new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
                         semaphore.acquire();
-                        System.out.println("acquire ");
-                        semaphore.release();
+                        System.out.println("acquire " + index);
+                        Thread.sleep((size - 1) * 100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {
-//                        System.out.println("release " + index);
-//                        semaphore.release();
+                        System.out.println("release " + index);
+                        semaphore.release();
                     }
                 }
-            });
+            }).start();
         }
-        sleep(1000);
-        System.out.println("end");
     }
 
     private static void CyclicBarrierTest() {
