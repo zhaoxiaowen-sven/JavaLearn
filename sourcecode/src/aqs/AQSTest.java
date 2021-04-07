@@ -1,6 +1,8 @@
 package aqs;
 
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
@@ -14,7 +16,6 @@ public class AQSTest {
     public static void test() {
         //        testMiniReentrantLock();
 //        testAcquired();
-//        new ConditionTest().test();
 //        Thread.currentThread().interrupt();
 //        Thread.interrupted()
 

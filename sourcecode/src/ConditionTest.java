@@ -1,5 +1,6 @@
-package aqs;
+import sun.jvm.hotspot.debugger.ThreadAccess;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -10,21 +11,48 @@ public class ConditionTest {
     private Condition condition = lock.newCondition();
 
     public void test() {
-        // 等待
+
         new Thread(new Runnable() {
             @Override
             public void run() {
-                conditionWait();
+                lock.lock();
+
+                try {
+//            Thread.sleep(1000);
+                    long nanos = condition.awaitNanos(1000 * 1000);
+
+                    System.out.println("nanos = " + nanos);
+                } catch (InterruptedException e) {
+
+                } finally{
+                    lock.lock();
+                }
             }
         }).start();
 
-        // 唤醒
+
         new Thread(new Runnable() {
             @Override
             public void run() {
                 conditionSignal();
             }
         }).start();
+
+        // 等待
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                conditionWait();
+//            }
+//        }).start();
+//
+//        // 唤醒
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                conditionSignal();
+//            }
+//        }).start();
     }
 
     private void conditionWait() {

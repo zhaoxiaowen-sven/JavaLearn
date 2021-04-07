@@ -11,7 +11,8 @@ public class SourceCodeTest {
 //        SynchronizedTest.test();
 //        AQSTest.test();
 //        Container.test();
+        new ConditionTest().test();
 
-        QueueContainer.test();
+//        QueueContainer.test();
     }
 }
