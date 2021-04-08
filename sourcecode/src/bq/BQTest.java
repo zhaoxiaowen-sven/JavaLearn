@@ -11,7 +11,17 @@ public class BQTest {
 
         LinkedBlockingQueue<Integer> linkedBlockingQueue = new LinkedBlockingQueue<>();
 
-//        PriorityBlockingQueue
+        PriorityBlockingQueue
 //                DelayQueue
+//        LinkedTransferQueue
+
+
+        SynchronousQueue<String> synchronousQueue = new SynchronousQueue<>(false)
+//        synchronousQueue.put("!");
+//        synchronousQueue.take();
+
+//        DelayQueue<String> delayQueue = DelayQueue<>(5);
+//        LinkedTransferQueue
     }
+
 }
