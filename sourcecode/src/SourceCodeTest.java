@@ -1,4 +1,5 @@
 import aqs.AQSTest;
+import bq.BQTest;
 import cp.Container;
 import cp.QueueContainer;
 
@@ -11,8 +12,9 @@ public class SourceCodeTest {
 //        SynchronizedTest.test();
 //        AQSTest.test();
 //        Container.test();
-        new ConditionTest().test();
+//        new ConditionTest().test();
 
+        BQTest.test();
 //        QueueContainer.test();
     }
 }

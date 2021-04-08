@@ -11,17 +11,41 @@ public class BQTest {
 
         LinkedBlockingQueue<Integer> linkedBlockingQueue = new LinkedBlockingQueue<>();
 
-        PriorityBlockingQueue
+//        PriorityBlockingQueue
 //                DelayQueue
 //        LinkedTransferQueue
 
 
-        SynchronousQueue<String> synchronousQueue = new SynchronousQueue<>(false)
+        SynchronousQueue<String> synchronousQueue = new SynchronousQueue<>(false);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String t = synchronousQueue.take();
+                    System.out.println("take = " + t);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println("put ");
+                    synchronousQueue.put("x");
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
 //        synchronousQueue.put("!");
 //        synchronousQueue.take();
 
 //        DelayQueue<String> delayQueue = DelayQueue<>(5);
 //        LinkedTransferQueue
+//                LinkedBlockingDeque
     }
 
 }
