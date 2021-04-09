@@ -3,7 +3,7 @@ import bq.BQTest;
 import cp.Container;
 import cp.QueueContainer;
 
-public class SourceCodeTest {
+public class JUCTest {
 
     public static void main(String[] args) {
 
