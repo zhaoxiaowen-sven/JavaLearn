@@ -1,5 +1,18 @@
 public class JvmTest {
-    public static void main(String[] args){
+    static {
+        i = 30;
 
+//        System.out.println(i); // 可以赋值，但是不能调用
+    }
+    static int i = 15;
+
+    int x = 20;
+
+    public JvmTest() {
+         x = 10;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("jvmTest");
     }
 }
