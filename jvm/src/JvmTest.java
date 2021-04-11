@@ -16,5 +16,10 @@ public class JvmTest {
 
     public static void main(String[] args) {
         System.out.println("jvmtest");
+
+        ClassLoaderTest.test();
+
+//        java.lang.String.test();
+        MyString.test();
     }
 }
