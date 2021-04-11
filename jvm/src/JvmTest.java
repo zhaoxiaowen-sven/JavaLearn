@@ -19,7 +19,5 @@ public class JvmTest {
 
         ClassLoaderTest.test();
 
-//        java.lang.String.test();
-        MyString.test();
     }
 }

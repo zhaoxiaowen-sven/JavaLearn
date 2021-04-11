@@ -11,9 +11,8 @@ public class ClassLoaderTest {
 
         ClassLoader bootstrapClassLoader = extClassLoader.getParent();
         System.out.println(bootstrapClassLoader);
+        System.out.println(ClassLoaderTest.class.getClassLoader());
 
-        ClassLoaderTest.class.getClassLoader();
 
-//        URLClassLoader
     }
 }
