@@ -15,9 +15,12 @@ public class JvmTest {
     }
 
     public static void main(String[] args) {
-        System.out.println("jvmtest");
+//        System.out.println("jvmtest");
 
-        ClassLoaderTest.test();
+//        ClassLoaderTest.test();
 
+//        new DynamicLinkingTest().methodB();
+
+        new AnimalTest().test();
     }
 }
