@@ -1,3 +1,5 @@
+package runtimearea;
+
 public class DynamicLinkingTest {
 
     int num = 10;

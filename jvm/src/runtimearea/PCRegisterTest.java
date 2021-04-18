@@ -1,3 +1,5 @@
+package runtimearea;
+
 public class PCRegisterTest {
     public static void main(String[] args) {
         int i = 10;

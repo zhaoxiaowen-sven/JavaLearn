@@ -1,3 +1,5 @@
+package runtimearea;
+
 /**
  * 体会invokedynamic 指令
  */

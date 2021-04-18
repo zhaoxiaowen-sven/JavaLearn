@@ -1,3 +1,5 @@
+package runtimearea;
+
 import java.io.Serializable;
 
 class MethodInnerStrucTest extends Object implements Comparable<String>, Serializable {
