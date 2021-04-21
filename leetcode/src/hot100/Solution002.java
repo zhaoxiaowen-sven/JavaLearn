@@ -1,4 +1,4 @@
-package top100;
+package hot100;
 
 public class Solution002 {
     static class ListNode {

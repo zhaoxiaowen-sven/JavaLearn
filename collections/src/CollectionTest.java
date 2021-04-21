@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CollectionTest {
@@ -22,6 +23,7 @@ public class CollectionTest {
 
         CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
 
+        ConcurrentHashMap<String, String> concurrentHashMap = new ConcurrentHashMap<>();
     }
 
     private static void testHashSet() {
