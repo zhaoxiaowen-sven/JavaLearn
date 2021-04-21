@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class CollectionTest {
     public static void main(String[] args) {
@@ -14,13 +12,41 @@ public class CollectionTest {
 
         System.out.println("CollectionTest");
 //         testIterator();
-        testNormal();
-        testForEach();
+//        testNormal();
+//        testForEach();
 
-        LinkedList<String> list = new LinkedList<>();
-        HashSet<String> set = new HashSet<>();
+//        testLinkedHashMap();
+
+        testHashSet();
 
 
+        CopyOnWriteArrayList<String> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
+
+    }
+
+    private static void testHashSet() {
+        HashSet<String > set = new HashSet<>();
+        set.add("a");
+        set.add("c");
+        set.add("b");
+
+        for (String s : set) {
+            System.out.println(s);
+        }
+    }
+
+    private static void testLinkedHashMap() {
+        LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>(10, 0.75f, true);
+        linkedHashMap.put("a", " 1");
+        linkedHashMap.put("b", " 2");
+        linkedHashMap.put("c", " 3");
+        for (Map.Entry<String, String> entry : linkedHashMap.entrySet()) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
+
+        for (String key : linkedHashMap.keySet()) {
+            System.out.println(linkedHashMap.get(key));
+        }
     }
 
     private static void testNormal() {
