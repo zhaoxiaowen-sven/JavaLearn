@@ -1,5 +1,7 @@
 package array;
 
+import java.util.HashMap;
+
 public class Solution059 {
     public int[][] generateMatrix(int n) {
         int startX = 0;
@@ -70,6 +72,9 @@ public class Solution059 {
             }
             System.out.println("");
         }
+        HashMap<Integer, Integer> map = new HashMap<>();
+        map.put(1,1);
+        System.out.println(map.get(0));
 //        new Solution059().generateMatrix(5);
     }
 }
