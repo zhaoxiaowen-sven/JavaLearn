@@ -12,11 +12,27 @@ public class Solution003 {
         int ret = 0;
         int left = 0;
         for (int j = 0; j < s.length(); j++) {
-            if (map.containsKey(s.charAt(j))) {
-                left = Math.max(map.get(s.charAt(j)) + 1, left);
+            if (map.containsKey(s.charAt(j))) { // 如果已经包含了的情况下，从
+                left = Math.max(map.get(s.charAt(j)) + 1, left);//下标 + 1 代表 i 要移动的下个位置
             }
-            map.put(s.charAt(j), j);//下标 + 1 代表 i 要移动的下个位置
+            map.put(s.charAt(j), j); // put 进去的时候会把重复元素索引更新掉
             ret = Math.max(ret, j - left + 1);
+        }
+        return ret;
+    }
+
+    public int lengthOfLongestSubstring5(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        int ret = 0;
+        int left = 0;
+
+        for (int j = 0; j < s.length(); j++) {
+            if (map.containsKey(s.charAt(j))) { // 如果已经包含了的情况下，从
+                left = Math.max(map.get(s.charAt(j)) + 1, left);//下标 + 1 代表 i 要移动的下个位置
+            } else {
+                map.put(s.charAt(j), j);
+                ret = Math.max(ret, j - left + 1);
+            }
         }
         return ret;
     }
@@ -39,6 +55,26 @@ public class Solution003 {
         }
         return ret;
     }
+
+    public int lengthOfLongestSubstringX(String s) {
+        int count = 0;
+        int left = 0;
+        int right = 0;
+        Set<Character> set = new HashSet<>();
+        int n = s.length();
+        while (left < n && right < n) {
+            if (!set.contains(s.charAt(right))) {
+                set.add(s.charAt(right));
+                right ++;
+                count = Math.max(count, right - left);
+            } else {
+                set.remove(s.charAt(left));
+                left ++;
+            }
+        }
+        return count;
+    }
+
 
     public int lengthOfLongestSubstring1(String s) {
         int n = s.length();
@@ -64,8 +100,16 @@ public class Solution003 {
         return true;
     }
 
+
+
+    public static void main(String[] args) {
+        System.out.println(new Solution003().lengthOfLongestSubstring2("pwwkew"));
+//        System.out.println(new Solution003().lengthOfLongestSubstringx("pwwkew"));
+//        System.out.println(new Solution003().lengthOfLongestSubstringx("abcabcbb"));
+    }
+
     public void test() {
-        System.out.println(lengthOfLongestSubstring("abba"));
+        System.out.println(lengthOfLongestSubstringX("abba"));
 //        System.out.println(lengthOfLongestSubstring("a"));
 //        System.out.println(lengthOfLongestSubstring(""));
 //        System.out.println(lengthOfLongestSubstring("au"));

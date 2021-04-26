@@ -59,6 +59,22 @@ public class Solution005 {
         return s.substring(start, start + max);
     }
 
+//    public String longestPalindrome3(String s) {
+//        int start = 0;
+//        int n = s.length();
+//        int ret = 0;
+//        while (start < n) {
+//            int left = start - 1;
+//            int right = start + 1;
+//            while (left >= 0 && right < n && s.charAt(left) == s.charAt(right)) {
+//                left--;
+//                right++;
+//            }
+//            ret = Math.max(ret, right - left);
+//        }
+//        return ret;
+//    }
+
     public void test() {
         System.out.println(longestPalindrome("babad"));
         System.out.println(longestPalindrome2("babad"));
