@@ -84,4 +84,22 @@ public class KMPMatch {
         }
         return next;
     }
+
+    private static int[] getNextMore2(char[] match) {
+        int j = 0; // 前缀末尾
+        int next[] = new int[match.length];
+        // int i// 后缀末尾
+        next[0] = 0;
+        for (int i = 1; i< next.length ; i++) {
+            while (j > 0 && (s[j] != s[i])) {
+                j = next[j - 1]; // 回退到前一位next数组的下标
+            }
+
+            if (s[j] == s[i]) { //
+                j ++;
+            }
+            next[i] = j;
+        }
+
+    }
 }
