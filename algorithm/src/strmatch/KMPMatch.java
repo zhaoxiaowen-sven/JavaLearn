@@ -85,21 +85,124 @@ public class KMPMatch {
         return next;
     }
 
-    private static int[] getNextMore2(char[] match) {
-        int j = 0; // 前缀末尾
-        int next[] = new int[match.length];
-        // int i// 后缀末尾
-        next[0] = 0;
-        for (int i = 1; i< next.length ; i++) {
-            while (j > 0 && (s[j] != s[i])) {
-                j = next[j - 1]; // 回退到前一位next数组的下标
+    //    private static int[] getNextMore2(char[] match) {
+//        // 1、初始化
+//        int[] next = new int[match.length];
+//        int j = 0; // 前缀末尾
+//        next[0] = 0; //
+//        for (int i = 1; i< next.length ; i++) {        // int i// 后缀末尾
+//            while (j > 0 && (match[j] != match[i])) { // 2、不匹配的时候后退
+//                j = next[j - 1]; // 回退到前一位next数组的下标
+//            }
+//
+//            if (match[j] == match[i]) { // 3、匹配的时候后移动
+//                j ++;
+//            }
+//            next[i] = j; // 4、赋值给next 数组
+//        }
+//        return next;
+//    }
+//
+//
+    public int strStr(String haystack, String needle) {
+        if (needle == null) {
+            return 0;
+        }
+        int[] next = getNext(needle);
+
+        int len2 = needle.length();
+        int j = 0;
+        for (int i = 0; i < haystack.length(); i++) {
+            while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+                j = next[j - 1];
             }
 
-            if (s[j] == s[i]) { //
-                j ++;
+            if (haystack.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+
+            if (j == len2) {
+                // return i - len2 + 1; // j
+                return i - j + 1; // j ++ 过了， i ++ 还没执行
+            }
+        }
+        return -1;
+    }
+
+
+    public static void main(String[] args) {
+//        new KMPMatch().strStr("hello", "ll");
+        System.out.println(new KMPMatch().strStr5("hello", "ll"));
+    }
+
+    private int[] getNext(String needle) {
+        // 初始化
+        int len = needle.length();
+        int[] next = new int[len];
+        next[0] = 0; //
+        int j = 0; // 前缀的末尾, i之前包含i的最长相当的前后缀长度, aabaaf
+        // i 后缀的末尾
+        for (int i = 1; i < len; i++) {
+            while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
+                j = next[j - 1];
+            }
+
+            if (needle.charAt(i) == needle.charAt(j)) {
+                j++;
             }
             next[i] = j;
         }
+        return next;
+    }
 
+
+    public int strStr5(String haystack, String needle) {
+        if (needle == null) {
+            return 0;
+        }
+        int[] next = getNext5(needle);
+
+        int len2 = needle.length();
+        int j = 0;
+        for (int i = 1; i < haystack.length(); i++) {
+            while (j >= 0 && haystack.charAt(i) != needle.charAt(j + 1)) {
+                j = next[j];
+            }
+
+            if (haystack.charAt(i) == needle.charAt(j + 1)) {
+                j++;
+            }
+
+            if (j == len2 - 1) {
+                return i - j; // j ++ 过了， i ++ 还没执行
+            }
+        }
+        return -1;
+    }
+
+    public boolean repeatedSubstringPattern(String s) {
+        int len = s.length();
+        String str2 = s + s;
+
+        return str2.substring(len, (2*len) -1) .equals(s);
+    }
+
+    private int[] getNext5(String needle) {
+        // 初始化
+        int len = needle.length();
+        int[] next = new int[len];
+        next[0] = -1; //
+        int j = 0; // 前缀的末尾
+        // i 后缀的末尾
+        for (int i = 1; i < len; i++) {
+            while (j >= 0 && needle.charAt(i) != needle.charAt(j + 1)) {
+                j = next[j];
+            }
+            if (needle.charAt(i) == needle.charAt(j + 1)) {
+                j++;
+            }
+            next[i] = j;
+        }
+        return next;
     }
 }
