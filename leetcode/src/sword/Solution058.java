@@ -1,6 +1,6 @@
-package string;
+package sword;
 
-public class SolutionS058 {
+public class Solution058 {
     public String reverseLeftWords(String s, int n) {
         int len = s.length();
         int i = 0;
@@ -36,6 +36,6 @@ public class SolutionS058 {
     }
 
     public static void main(String[] args) {
-        System.out.print(new SolutionS058().reverseLeftWords("abcdefg", 2));
+        System.out.print(new Solution058().reverseLeftWords("abcdefg", 2));
     }
 }

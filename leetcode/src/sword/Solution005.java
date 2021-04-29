@@ -1,6 +1,6 @@
-package string;
+package sword;
 
-public class SolutionS005 {
+public class Solution005 {
     public String replaceSpace(String s) {
         int size = s.length();
 

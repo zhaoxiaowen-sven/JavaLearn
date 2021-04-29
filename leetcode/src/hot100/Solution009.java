@@ -1,8 +1,7 @@
 package hot100;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
+import java.util.concurrent.BlockingDeque;
 
 public class Solution009 {
 
@@ -16,7 +15,13 @@ public class Solution009 {
             if (nums[i] > 0) {
                 break;
             }
-            if (i > 0 && nums[i] == nums[i - 1]) {
+            // 错误去重方法，将会漏掉-1,-1,2 这种情况
+            /*
+            if (nums[i] == nums[i + 1]) {
+                continue;
+            }
+            */
+            if (i > 0 && nums[i] == nums[i - 1]) { // i -1 和 i 比较的意思 相当于前面数组找过了 才能在跳过
                 continue;
             }
             while (left < right) {
