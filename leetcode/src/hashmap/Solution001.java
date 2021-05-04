@@ -11,7 +11,7 @@ public class Solution001 {
             if (map.containsKey(x)) {
                 return new int[]{map.get(x),i};
             } else {
-                map.put(x, i); // 存的是 值 -> 索引
+                map.put(nums[i], i); // 存的是 值 -> 索引
             }
         }
         return null;

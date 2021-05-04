@@ -30,7 +30,7 @@ public class Solution059 {
 
             // [ )
             // 上行左到右, i 保持不变
-            while (j < n - offset + startY) {
+            while (j < n - offset + startY) { // + startY 从startY开始的
                 arr[startX][j] = count++;
                 j++;
             }
