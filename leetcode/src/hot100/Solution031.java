@@ -1,6 +1,5 @@
 package hot100;
 
-import static com.sun.tools.javac.jvm.ByteCodes.swap;
 
 public class Solution031 {
     public void nextPermutation(int[] nums) {
