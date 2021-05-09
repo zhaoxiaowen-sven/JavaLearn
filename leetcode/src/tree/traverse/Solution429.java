@@ -2,7 +2,7 @@ package tree.traverse;
 
 import java.util.*;
 
-public class Solution427 {
+public class Solution429 {
 
     // Definition for a Node.
     class Node {
