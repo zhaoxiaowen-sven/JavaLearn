@@ -16,24 +16,25 @@ public class Solution047 {
     private void backtrack(int[] nums, List<List<Integer>> res, Deque<Integer> path, boolean[] used) {
         int size = nums.length;
         if (path.size() == size) {
-//            System.out.println(path);
             res.add(new ArrayList<>(path));
             return;
         }
         for (int i = 0; i < size; i++) {
             // 这一条树枝上不能有重复的
-            if (!used[i]) { // 去重3
-                if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1]) {
-                    continue;
-                }
-                used[i] = true;
-//                dump(used);
-                System.out.println(path);
-                path.addLast(nums[i]);
-                backtrack(nums, res, path, used);
-                path.removeLast();
-                used[i] = false;
+            if (used[i]) {
+                continue;
             }
+            // i > 0 是为了保证 i-1有意义
+            // nums[i-1] == nums [i], 表示出现重复
+            // used[i - 1] == false ，表示回退中刚刚撤销选择
+            if (i > 0 && nums[i] == nums[i - 1] && used[i - 1] == false) {
+                continue;
+            }
+            used[i] = true;
+            path.addLast(nums[i]);
+            backtrack(nums, res, path, used);
+            path.removeLast();
+            used[i] = false;
         }
     }
 
@@ -47,6 +48,6 @@ public class Solution047 {
 
 
     public static void main(String[] args) {
-        new Solution047().permute(new int[]{1,1,1});
+        new Solution047().permute(new int[]{1, 1, 1});
     }
 }
