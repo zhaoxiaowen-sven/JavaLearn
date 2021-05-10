@@ -73,7 +73,7 @@ public class Solution117 {
                 //     /   \
                 //    b ->   c
                 //   / \    / \
-                //   d      (e)  h
+                //  d      (e)  h
                 // 如果是root是b时c， 需要将d (e, f) 建立连接
                 root.left.next = getNext(root.next);
             }

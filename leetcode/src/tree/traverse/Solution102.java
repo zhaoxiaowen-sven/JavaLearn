@@ -8,9 +8,15 @@ public class Solution102 {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        TreeNode(int val,TreeNode left, TreeNode right) {
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
             this.left = left;
             this.right = right;
@@ -27,7 +33,7 @@ public class Solution102 {
         nodeQueue.offer(root);
 
         // 2.开始遍历
-        while (!nodeQueue.isEmpty()){
+        while (!nodeQueue.isEmpty()) {
             // 当前层拥有的节点个数
             int count = nodeQueue.size();
             List<Integer> level = new ArrayList<>();
