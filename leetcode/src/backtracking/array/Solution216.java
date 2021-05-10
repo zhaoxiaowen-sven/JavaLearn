@@ -1,4 +1,4 @@
-package backtracking;
+package backtracking.array;
 
 import java.util.ArrayList;
 import java.util.Deque;

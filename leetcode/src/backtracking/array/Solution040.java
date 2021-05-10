@@ -1,6 +1,4 @@
-package backtracking.string;
-
-import com.sun.tools.javac.code.Attribute;
+package backtracking.array;
 
 import java.util.*;
 
@@ -21,7 +19,7 @@ public class Solution040 {
 
         int length = candidates.length;
         for (int i = startIndex; i < length; i++) {
-            if (i > startIndex && candidates[i+1] == candidates[i]) {
+            if (i > startIndex && candidates[i + 1] == candidates[i]) {
                 continue;
             }
             path.push(candidates[i]);

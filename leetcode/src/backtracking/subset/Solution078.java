@@ -1,4 +1,4 @@
-package backtracking.string;
+package backtracking.subset;
 
 import java.util.ArrayList;
 import java.util.Deque;
@@ -14,6 +14,7 @@ public class Solution078 {
     }
 
     private void dfs(int[] nums, Deque<Integer> deque, List<List<Integer>> lists, int startIndex) {
+        System.out.println(deque);
         lists.add(new ArrayList<>(deque)); // 在这里添加元素的原因是记录所有合理的结果集
         int size = nums.length;
         if (startIndex == size) {
