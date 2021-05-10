@@ -18,10 +18,16 @@ public class Solution090 {
             return;
         }
 
+        // 第二种去重
+        // HashSet<Integer> set = new HashSet<>();
         for (int i = startIndex; i < size; i++) {
             if (i > startIndex && nums[i] == nums[i - 1]) {
                 continue;
             }
+//            if (set.contains(nums[i])) {
+//                continue;
+//            }
+//            set.add(nums[i]);
             path.push(nums[i]);
             backtrack(nums, res, path, i + 1);
             path.pop();
