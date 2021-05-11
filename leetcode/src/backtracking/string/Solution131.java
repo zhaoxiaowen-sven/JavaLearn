@@ -18,6 +18,7 @@ public class Solution131 {
     private void dfs(String s, int startIndex, Deque<String> path, List<List<String>> res) {
         int size = s.length();
         if (startIndex == size) {
+            // 切割到最后收集结果
             res.add(new ArrayList<>(path));
             return;
         }
@@ -25,14 +26,15 @@ public class Solution131 {
         // startIndex 表示这一层开始切的位置，循环开始的位置
         // [startIndex, i] 代表的是递归过程中子串搜索的范围
         for (int i = startIndex; i < size; i++) {
-            if (isPalindrome(s, startIndex, i)) {
-                String subStr = s.substring(startIndex, i + 1);
-//                System.out.println("add str = " + subStr + "， startIndex = " + startIndex + ", i= " + i);
-                path.addLast(subStr);
-                // 继续切割，！！！切割过的地方不能再切割！！！
-                dfs(s, i + 1, path, res);
-                path.removeLast();
+            if (!isPalindrome(s, startIndex, i)) {
+                continue;
             }
+            String subStr = s.substring(startIndex, i + 1);
+            // System.out.println("add str = " + subStr + "， startIndex = " + startIndex + ", i= " + i);
+            path.addLast(subStr);
+            // 继续切割，！！！切割过的地方不能再切割！！！
+            dfs(s, i + 1, path, res);
+            path.removeLast();
         }
     }
 

@@ -1,6 +1,9 @@
 package backtracking.subset;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Solution046 {
     public List<List<Integer>> permute(int[] nums) {
@@ -21,11 +24,11 @@ public class Solution046 {
         }
         for (int i = 0; i < size; i++) {
 
-//             这一条树上不能有重复的，解法2， 效率没有used高
-//            if (path.contains(nums[i])) {
-//                continue;
-//            }
-//             这一条树上不能有重复的，解法1
+            //   这一条树上不能有重复的，解法2， 效率没有used高
+            //  if (path.contains(nums[i])) {
+            //      continue;
+            //  }
+            //   这一条树上不能有重复的，解法1
             if (used[i]) {
                 continue;
             }

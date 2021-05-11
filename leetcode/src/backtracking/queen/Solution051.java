@@ -21,7 +21,7 @@ public class Solution051 {
             return;
         }
 
-        // col 代表列， depth 代表行
+        // col 代表列， row 代表行
         for (int col = 0; col < n; col++) {
             if (!isValid(chessboard, row, col, n)) {
                 continue;

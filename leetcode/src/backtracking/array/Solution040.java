@@ -12,14 +12,16 @@ public class Solution040 {
     }
 
     private void dfs(int[] candidates, int target, Deque<Integer> path, List<List<Integer>> res, int startIndex) {
+        if (target > 0) {
+            return;
+        }
         if (target == 0) {
             res.add(new ArrayList<>(path));
             return;
         }
-
         int length = candidates.length;
-        for (int i = startIndex; i < length; i++) {
-            if (i > startIndex && candidates[i + 1] == candidates[i]) {
+        for (int i = startIndex; i < length && target >= candidates[i]; i++) { // 剪枝操作
+            if (i > startIndex && candidates[i] == candidates[i - 1]) {
                 continue;
             }
             path.push(candidates[i]);
