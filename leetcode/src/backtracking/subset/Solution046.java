@@ -6,6 +6,7 @@ public class Solution046 {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Deque<Integer> path = new LinkedList<>();
+
         boolean[] used = new boolean[nums.length];
         backtrack(nums, res, path, used);
         return res;
@@ -19,7 +20,12 @@ public class Solution046 {
             return;
         }
         for (int i = 0; i < size; i++) {
-            // 这一条树上不能有重复的
+
+//             这一条树上不能有重复的，解法2， 效率没有used高
+//            if (path.contains(nums[i])) {
+//                continue;
+//            }
+//             这一条树上不能有重复的，解法1
             if (used[i]) {
                 continue;
             }
