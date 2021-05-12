@@ -1,4 +1,4 @@
-package category.greedy;
+package category.greedy.lesson1;
 
 public class Solution376 {
     public int wiggleMaxLength(int[] nums) {

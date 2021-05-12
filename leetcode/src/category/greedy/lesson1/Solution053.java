@@ -1,4 +1,4 @@
-package category.greedy;
+package category.greedy.lesson1;
 
 public class Solution053 {
     public int maxSubArray(int[] nums) {

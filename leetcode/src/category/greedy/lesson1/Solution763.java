@@ -1,4 +1,4 @@
-package category.greedy;
+package category.greedy.lesson1;
 
 import java.util.ArrayList;
 import java.util.List;
