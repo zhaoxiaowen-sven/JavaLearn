@@ -29,11 +29,11 @@ public class BstSearch {
         System.out.println(tree.search(52));
 
 //        System.out.println("\n前序遍历结果");
-//        tree.preOrder(tree.root);
+//        category.tree.preOrder(category.tree.root);
         System.out.println("\n中序遍历结果");
         tree.midOrder(tree.root);
 //        System.out.println("\n后序遍历结果");
-//        tree.postOrder(tree.root);
+//        category.tree.postOrder(category.tree.root);
 
         tree.delete(tree.root, 58);
         System.out.println("\n中序遍历结果");
