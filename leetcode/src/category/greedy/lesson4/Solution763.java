@@ -1,9 +1,11 @@
-package category.greedy.lesson1;
+package category.greedy.lesson4;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Solution763 {
+    
+    // 这是一道map题
     public List<Integer> partitionLabels(String s) {
         List<Integer> res = new ArrayList<>();
         int n = s.length();
