@@ -1,4 +1,4 @@
-package category.dp;
+package category.dp.lesson1;
 
 public class Solution509 {
     public int fib(int n) {

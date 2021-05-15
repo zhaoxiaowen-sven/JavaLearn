@@ -1,19 +1,21 @@
-package category.dp;
+package category.dp.lesson1;
 
 public class Solution070 {
     public int climbStairs(int n) {
-        // dp[i]  爬到第i楼的方式, i 是楼层
+        // dp[i] 爬到第i楼的方法, i 是楼层
         int[] dp = new int[n + 1];
-        // 初始化值是0，这是一个求最大的题，所以初始值是最小
-        // Arrays.fill(dp, );
+        //
+        dp[0] = 1;
 
-        for (int i = 0; i <= n; i++) {
+        // i 是可以做的选择
+        for (int i = 1; i <= n; i++) {
+            // j 是可以做的选择
             for (int j = 1; j <= 2; j++) {
                 if (i - j < 0) {
                     continue;
                 }
+                dp[i] += dp[i - j];
                 dump(dp);
-                dp[i] = Math.max(dp[i], dp[i - j] + 1);
             }
         }
         return dp[n];
@@ -28,6 +30,6 @@ public class Solution070 {
     }
 
     public static void main(String[] args) {
-        new Solution070().climbStairs(6);
+        new Solution070().climbStairs(4);
     }
 }
