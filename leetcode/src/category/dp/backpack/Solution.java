@@ -9,7 +9,7 @@ public class Solution {
         // dp[i][j] = Math.max(dp[i - 1, j], dp[i - 1] [w - weight[i] + value[i]])
         // 数组的索引从0开始，遍历从1开始，所以，递推公式中，所有的 取数组元素的i
         // weight[i] 以及  value[i], 都要减1，相当于 数组向前移动一位
-        // dp[i][j] = Math.max(dp[i - 1, j], dp[i - 1] [w - weight[i] + value[i]])
+        // dp[i][j] = Math.max(dp[i - 1, j], dp[i - 1] [w - weight[i - i] + value[i - 1]])
 
 
         // 关于二维数组的长度说明
