@@ -108,10 +108,18 @@ public class Solution {
         for (int i = 0; i < nums; i++) {//for 循环表达的意思是放 n 件物品，背包的最大价值
             for (int j = w; j >= weight[i]; j--) { // dp[4] 不能累计到dp[3]
                 dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
-                DpUtils.dump(dp);
+//                DpUtils.dump(dp);
             }
-            DpUtils.dump(dp);
+//            DpUtils.dump(dp);
         }
+
+//        for (int i = 0; i < nums; i++) {//for 循环表达的意思是放 n 件物品，背包的最大价值
+//            for (int j = weight[i]; j <= w; j++) { // dp[4] 不能累计到dp[3]
+//                dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
+//                DpUtils.dump(dp);
+//            }
+////            DpUtils.dump(dp);
+//        }
         return dp[w];
     }
 
