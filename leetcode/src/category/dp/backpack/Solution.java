@@ -21,12 +21,12 @@ public class Solution {
                 } else {
                     dp[i][j] = Math.max(
                             dp[i - 1][j], //
-                            val[i - 1] + dp[i - 1][w - weight[i - 1]]//
+                            val[i - 1] + dp[i - 1][w - weight[i - 1]]// 在装第i个物品的前提下，背包能装的最大价值是多少
                     );
                 }
             }
         }
-        dumpDp(dp);
+        DpUtils.dumpDp(dp);
         return dp[n][w];
     }
 
@@ -71,7 +71,7 @@ public class Solution {
 //        // 先遍历物品个数
 //        for (int j = 0; j <= w; j++) {
 //            //物品个数从1开始
-//            for (int i = 1; i <= nums; i++) {
+//            for (int i = 1; i < nums; i++) {
 //                if (j - weight[i]  < 0) {
 //                    dp[i][j] = dp[i - 1][j];//
 //                } else {
@@ -82,22 +82,10 @@ public class Solution {
 //                }
 //            }
 //        }
-        dumpDp(dp);
+        DpUtils.dumpDp(dp);
 
         return dp[n - 1][w];
     }
-
-    private void dumpDp(int[][] dp) {
-        StringBuilder builder = new StringBuilder();
-        for (int[] arr : dp) {
-            for (int i : arr) {
-                builder.append(i).append(",");
-            }
-            builder.append("\n");
-        }
-        System.out.println(builder.toString());
-    }
-
 
     private int backpack3(int n, int w, int[] value, int[] weight) {
         // 容量为j的背包的最大价值
@@ -120,23 +108,13 @@ public class Solution {
         for (int i = 0; i < nums; i++) {//for 循环表达的意思是放 n 件物品，背包的最大价值
             for (int j = w; j >= weight[i]; j--) { // dp[4] 不能累计到dp[3]
                 dp[j] = Math.max(dp[j], dp[j - weight[i]] + value[i]);
-                dump(dp);
+                DpUtils.dump(dp);
             }
-            dump(dp);
+            DpUtils.dump(dp);
         }
-
-
         return dp[w];
     }
-    private void dump(int[] dp) {
-        StringBuilder builder = new StringBuilder();
-        for (int i :dp) {
-            builder.append(i).append(",");
-        }
-        builder.append("\n");
 
-        System.out.println(builder.toString());
-    }
     public static void main(String[] args) {
         int n = 3;
         int w = 4;
