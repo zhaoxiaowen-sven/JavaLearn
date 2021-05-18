@@ -1,4 +1,4 @@
-package category.dp.backpack;
+package category.dp.backpack01;
 
 public class Solution1049 {
     public int lastStoneWeightII(int[] stones) {

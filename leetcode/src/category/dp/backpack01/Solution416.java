@@ -1,37 +1,9 @@
-package category.dp.backpack;
+package category.dp.backpack01;
 
 public class Solution416 {
-    public boolean canPartition(int[] nums) {
-        int sum = 0;
-        for (int i : nums) {
-            sum += i;
-        }
-        if (sum % 2 != 0) {
-            return false;
-        }
-        int target = sum / 2;
-        // dp[i] 数组的含义，取i个数的最大值
-        int[] dp = new int[target + 1];
-        // 初始化是 0
-        // 递推公式
-        // dp[j] == max(dp[j], dp[j - num[i]] + value[i];
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = target; j >= nums[i]; j--) {
-                // 物品是nums[i]，重量是nums[i]i，价值也是nums[i]
-                dp[j] = Math.max(dp[j], dp[j - nums[i]] + nums[i]);
-                if (dp[j] == target) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 
-    public boolean canPartition2(int[] nums) {
-        int sum = 0;
-        for (int i : nums) {
-            sum += i;
-        }
+    public boolean canPartition(int[] nums) {
+        int sum = getSum(nums);
         if (sum % 2 != 0) {
             return false;
         }
@@ -39,7 +11,7 @@ public class Solution416 {
 
         //dp[i][j] 能不能由 i 构成 j;
         boolean[][] dp = new boolean[nums.length + 1][target + 1];
-
+        // !!! j = 0 因为背包没有空间的时候
         for (int i = 0; i <= nums.length; i++) {
             dp[i][0] = true;
         }
@@ -49,8 +21,6 @@ public class Solution416 {
                 if (j - nums[i] < 0) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    // 前面 i-1 个数是不是能填充 j - nums[i - 1], i -1 表示当前数。
-                    // 有没有大于的情况
                     dp[i][j] = dp[i - 1][j] | dp[i - 1][j - nums[i - 1]];
                 }
             }
@@ -58,11 +28,43 @@ public class Solution416 {
         return dp[nums.length][target];
     }
 
-    public boolean canPartition3(int[] nums) {
+    public boolean canPartition2(int[] nums) {
+        int sum = getSum(nums);
+        if (sum % 2 != 0) {
+            return false;
+        }
+        int target = sum / 2;
+        // dp[j] dp 能够构成j
+        boolean[] dp = new boolean[target + 1];
+        // j = 0,任何数都能构成
+        dp[0] = true;
+        // dp[j] == dp[j] | dp[j - num[i]]
+        // i = 1, nums[0] =1
+        // j = 6, dp[6] | dp[6 - 1] = false
+        // j = 5/4/3/2 -> dp[5/4/3/2] = true
+        // j = 1 , dp[1] = true
+        // 其实背包问题真正的判断是 j - nums[i - 1] 来确定的。
+        // i = 2 ...
+        for (int i = 1; i <= nums.length; i++) {
+            for (int j = target; j >= nums[i - 1]; j--) {
+                dp[j] = dp[j] | dp[j - nums[i - 1]];
+            }
+            //DpUtils.dump(dp);
+        }
+        return dp[target];
+    }
+
+    private int getSum(int[] nums) {
         int sum = 0;
         for (int i : nums) {
             sum += i;
         }
+        return sum;
+    }
+
+
+    public boolean canPartition3(int[] nums) {
+        int sum = getSum(nums);
         if (sum % 2 != 0) {
             return false;
         }
@@ -73,7 +75,7 @@ public class Solution416 {
         int[][] dp = new int[nums.length + 1][target + 1];
         // dp[i][j]
         for (int i = 1; i <= nums.length; i++) { // 相当于背包问题中物品的个数
-            for (int j = 1; j <= target; j++) { // w
+            for (int j = 1; j <= target; j++) { //
                 if (j - nums[i - 1] < 0) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
@@ -90,5 +92,6 @@ public class Solution416 {
     public static void main(String[] args) {
         int[] x = new int[]{1, 2, 2, 5};
         System.out.println(new Solution416().canPartition3(x));
+        System.out.println(new Solution416().canPartition(x));
     }
 }
