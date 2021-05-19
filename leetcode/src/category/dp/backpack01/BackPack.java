@@ -174,14 +174,14 @@ public class BackPack {
                 if (j - weight[i - 1] < 0) {
                     dp[i][j] = dp[i - 1][j];
                 } else {
-                    dp[i][j] = Math.max(
-                            dp[i - 1][j],
-                            dp[i][w - weight[i - 1]] + val[i - 1]
-                    );
+                    dp[i][j] =
+                            //
+                            Math.max(dp[i - 1][j],
+                            dp[i][j - weight[i - 1]] + val[i - 1]);
                 }
             }
         }
-        DpUtils.dump(dp);
+        // DpUtils.dump(dp);
         return dp[n][w];
     }
 

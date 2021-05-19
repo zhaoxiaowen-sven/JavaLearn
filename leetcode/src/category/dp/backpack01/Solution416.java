@@ -7,6 +7,7 @@ public class Solution416 {
         if (sum % 2 != 0) {
             return false;
         }
+
         int target = sum / 2;
 
         //dp[i][j] 能不能由 i 构成 j;
