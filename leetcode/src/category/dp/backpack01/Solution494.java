@@ -56,6 +56,28 @@ public class Solution494 {
         return sum;
     }
 
+    int result = 0;
+    public int findTargetSumWays3(int[] nums, int target) {
+        if (nums.length == 0) {
+            return 0;
+        }
+
+        dfs(nums, target,0, nums.length);
+        return result;
+    }
+
+    private void dfs(int[] nums, int target,  int startIndex, int size) {
+        if (startIndex == size) {
+            if (target == 0) {
+                result++;
+            }
+            return;
+        }
+
+        dfs(nums, target -= nums[startIndex], startIndex + 1, size);
+        dfs(nums, target += nums[startIndex], startIndex + 1, size);
+    }
+
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 1, 1};
         System.out.println(new Solution494().findTargetSumWays2(nums, 3));
