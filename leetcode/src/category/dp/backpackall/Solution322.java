@@ -19,13 +19,13 @@ public class Solution322 {
         for (int i = 0; i <= n; i++) {
             dp[i][0] = 0;
         }
-        for (int i = 1; i <= n; i++) {
-            for (int j = amount; j >= 1; j--) {
+        for (int j = 0; j <= amount; j++) {
+            for (int i = 1; i <= n; i++) {
                 if (j - coins[i - 1] >= 0) {
-                    dp[i][j] = Math.min(dp[i - 1][j], dp[i - 1][j - coins[i - 1]] + 1);
+                    dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - coins[i - 1]] + 1);
                 }
             }
-            DpUtils.dump(dp);
+//            DpUtils.dump(dp);
         }
         return dp[n][amount] == amount + 1 ? -1 : dp[n][amount];
     }
@@ -104,6 +104,8 @@ public class Solution322 {
         Arrays.fill(dp, amount + 1);
         dp[0] = 0;
         // 遍历状态的所有取值， 从硬币 0 -> amount
+        // i = 3;
+        // dp[3] ; coint = 0; dp[3] = dp[3] + dp[3-1]  + 1;
         for (int i = 0; i <= amount; i++) {
             // 内层for循环求所有选择的最小值
             for (int coin : coins) {
@@ -116,16 +118,17 @@ public class Solution322 {
                 dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
                 DpUtils.dump(dp);
             }
+//            DpUtils.dump(dp);
         }
-//        dump(dp);
+//        DpUtils.dump(dp);
 
         return (dp[amount] == amount + 1) ? -1 : dp[amount];
     }
 
 
     public static void main(String[] args) {
-        int[] coins = {1, 2, 5};
-        System.out.println(new Solution322().coinChange(coins, 5));
-        System.out.println(new Solution322().coinChange2(coins, 5));
+        int[] coins = {2,4};
+//        System.out.println(new Solution322().coinChange(coins, 11));
+        System.out.println(new Solution322().coinChange3(coins, 3));
     }
 }

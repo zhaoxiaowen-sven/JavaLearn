@@ -1,6 +1,4 @@
-package category.dp.subseq2;
-
-import category.dp.backpack01.DpUtils;
+package category.dp.palindromics;
 
 public class Solution005 {
     public String longestPalindrome(String s) {
@@ -30,27 +28,25 @@ public class Solution005 {
 
 
     public String longestPalindrome2(String s) {
-        int len = s.length();
+        int n = s.length();
         int max = 1;
         int start = 0;
-        boolean[][] dp = new boolean[len][len];
-        for (int i = 0; i < len; i++) {
+        boolean[][] dp = new boolean[n][n];
+        for (int i = 0; i < n; i++) {
             dp[i][i] = true;
         }
-        // 从列开始填，左下角先填
-//        for (int i = 0; i < len; i++) {
-//            for (int j = i; j < len; j++) {
         // 遍历方向 非常重要
-        for (int j = 0; j < len; j++) {
-            for (int i = 0; i < j; i++) {
-                if (s.charAt(i) != s.charAt(j)) {
-                    dp[i][j] = false;
-                } else {
+        // [i ,j],区间是前闭后闭的
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i + 1; j < n; j++) {
+                if (s.charAt(i) == s.charAt(j)) {
                     if (j - i < 3) {
                         dp[i][j] = true;
                     } else {
                         dp[i][j] = dp[i + 1][j - 1];
                     }
+                } else {
+                    dp[i][j] = false;
                 }
                 if (dp[i][j] && j - i + 1 > max) {
                     max = j - i + 1;
@@ -58,7 +54,7 @@ public class Solution005 {
                 }
             }
         }
-        DpUtils.dump(dp);
+        // DpUtils.dump(dp);
         return s.substring(start, start + max);
     }
 

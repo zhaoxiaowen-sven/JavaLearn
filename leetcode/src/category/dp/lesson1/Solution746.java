@@ -1,6 +1,6 @@
 package category.dp.lesson1;
 
-public class Solution756 {
+public class Solution746 {
     public int minCostClimbingStairs(int[] cost) {
         int n = cost.length;
         int[] dp = new int[n];
