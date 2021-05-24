@@ -1,4 +1,4 @@
-package category.tree.attribute;
+package category.backtrack.tree;
 
 import java.util.*;
 
@@ -26,8 +26,7 @@ public class Solution257 {
 
     private void binaryTreePaths(TreeNode root,  String temp, List<String> result) {
         if (root.left == null && root.right == null) {
-            temp = temp + root.val;
-            result.add(temp);
+            result.add(temp + root.val);
             return;
         }
         if (root.left != null) {

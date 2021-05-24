@@ -1,4 +1,4 @@
-package category.tree.attribute;
+package category.backtrack.tree;
 
 public class Solution112 {
 

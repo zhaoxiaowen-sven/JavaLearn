@@ -1,4 +1,4 @@
-package category.backtracking.queen;
+package category.backtrack.queen;
 
 public class Solution037 {
     public void solveSudoku(char[][] board) {

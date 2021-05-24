@@ -1,4 +1,4 @@
-package category.backtracking.queen;
+package category.backtrack.queen;
 
 import java.util.*;
 

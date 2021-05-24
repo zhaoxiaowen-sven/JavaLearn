@@ -1,4 +1,4 @@
-package category.backtracking.subset;
+package category.backtrack.subset;
 
 import java.util.*;
 

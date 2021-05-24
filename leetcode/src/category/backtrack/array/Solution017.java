@@ -1,4 +1,4 @@
-package category.backtracking.array;
+package category.backtrack.array;
 
 
 import java.util.ArrayList;
