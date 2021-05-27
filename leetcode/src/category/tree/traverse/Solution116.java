@@ -82,4 +82,22 @@ public class Solution116 {
         connect(root.right);
         return root;
     }
+
+    public Node connect2(Node root) {
+        if (root == null) {
+            return null;
+        }
+        connectTwoNode(root.left, root.right);
+        return root;
+    }
+
+    private void connectTwoNode(Node left, Node right) {
+        if (left == null || right == null) {
+            return;
+        }
+        left.next = right;
+        connectTwoNode(left.left, left.right);
+        connectTwoNode(right.left,right.right);
+        connectTwoNode(left.right, right.left);
+    }
 }
