@@ -76,11 +76,27 @@ public class Solution145 {
 
         List<Integer> ans = new Solution145().postorderTraversal(treeNode5);
 
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i : ans) {
-            stringBuilder.append(i);
-            stringBuilder.append(",");
-        }
-        System.out.print(stringBuilder.toString());
+//        StringBuilder stringBuilder = new StringBuilder();
+//        for (int i : ans) {
+//            stringBuilder.append(i);
+//            stringBuilder.append(",");
+//        }
+//        System.out.print(stringBuilder.toString());
+
+        new Solution145().postorderTraversal2(treeNode5);
     }
+
+    public String postorderTraversal2(TreeNode root) {
+        if (root == null) {
+            return "#";
+        }
+        String l = postorderTraversal2(root.left);
+        String r = postorderTraversal2(root.right);
+        // 记录后序遍历过程中的每一个节点
+        String path = l + ", " + r + ", " + root.val;
+        System.out.println(path);
+        return path;
+    }
+
+
 }
