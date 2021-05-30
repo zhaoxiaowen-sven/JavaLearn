@@ -1,4 +1,4 @@
-package category.tree.traverse;
+package category.tree.dfs.preorder;
 
 public class Solution116 {
     // Definition for a Node.
@@ -96,6 +96,7 @@ public class Solution116 {
             return;
         }
         left.next = right;
+
         connectTwoNode(left.left, left.right);
         connectTwoNode(right.left,right.right);
         connectTwoNode(left.right, right.left);

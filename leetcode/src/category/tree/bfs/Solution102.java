@@ -1,4 +1,4 @@
-package category.tree.traverse;
+package category.tree.bfs;
 
 import java.util.*;
 

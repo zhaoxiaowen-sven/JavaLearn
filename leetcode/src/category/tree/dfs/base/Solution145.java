@@ -1,4 +1,4 @@
-package category.tree.traverse;
+package category.tree.dfs.base;
 
 import java.util.*;
 
@@ -29,23 +29,43 @@ public class Solution145 {
 //        list.add(root.val);
 //        return list;
 
-        List<Integer> list = new ArrayList<>();
-        Deque<TreeNode> stack = new LinkedList<>();
+//        List<Integer> list = new ArrayList<>();
+//        Deque<TreeNode> stack = new LinkedList<>();
+//
+//        // 左右中比较复杂，先仿照前序遍历求得中右左，再逆序得到 左右中即可
+//        while (root != null || !stack.isEmpty()) {
+//            while (root != null) {
+//                list.add(root.val);
+//                stack.push(root); // 中
+//                root = root.right; // 右
+//            }
+//
+//            TreeNode node = stack.pop();
+//            root = node.left; // 左
+//        }
+//        // 逆序
+//        Collections.reverse(list);
+//        return list;
 
-        // 左右中比较复杂，先仿照前序遍历求得中右左，再逆序得到 左右中即可
-        while (root != null || !stack.isEmpty()) {
-            while (root != null) {
-                list.add(root.val);
-                stack.push(root); // 中
-                root = root.right; // 右
+
+        List<Integer> res = new ArrayList<>();
+        Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            res.add(node.val);
+
+            // 后序遍历 反着来
+            if (node.left != null) {
+                stack.push(node.left);
             }
 
-            TreeNode node = stack.pop();
-            root = node.left; // 左
+            if (node.right != null) {
+                stack.push(node.right);
+            }
         }
-        // 逆序
-        Collections.reverse(list);
-        return list;
+        Collections.reverse(res);
+        return res;
     }
     public static void main(String[] args) {
         TreeNode treeNode2 = new TreeNode(2);

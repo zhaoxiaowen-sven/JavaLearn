@@ -1,10 +1,11 @@
-package category.tree.traverse;
+package category.tree.dfs.preorder;
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class Solution515 {
-    //Definition for a binary category.tree node.
-    class TreeNode {
+public class Solution226 {
+    // Definition for a binary category.tree node.
+    public class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
@@ -23,20 +24,25 @@ public class Solution515 {
         }
     }
 
-    public List<Integer> largestValues(TreeNode root) {
+    public TreeNode invertTree(TreeNode root) {
+//        if (root == null) {
+//            return null;
+//        }
+//        swap(root);
+//        invertTree(root.left);
+//        invertTree(root.right);
+//        return root;
+
         if (root == null) {
-            return Collections.emptyList();
+            return null;
         }
-        // 1.初始化
-        List<Integer> l = new ArrayList<>();
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             int size = queue.size();
-            int max = -1;
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                max = i == 0 ? node.val : Math.max(max, node.val);
+                swap(node);
                 if (node.left != null) {
                     queue.offer(node.left);
                 }
@@ -44,8 +50,13 @@ public class Solution515 {
                     queue.offer(node.right);
                 }
             }
-            l.add(max);
         }
-        return l;
+        return root;
+    }
+
+    private void swap(TreeNode root) {
+        TreeNode node = root.left;
+        root.left = root.right;
+        root.right = node;
     }
 }

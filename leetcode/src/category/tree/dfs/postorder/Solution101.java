@@ -1,4 +1,4 @@
-package category.tree.attribute;
+package category.tree.dfs.postorder;
 
 //   https://leetcode-cn.com/problems/symmetric-tree/
 public class Solution101 {

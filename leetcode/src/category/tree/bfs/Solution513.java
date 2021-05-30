@@ -1,4 +1,4 @@
-package category.tree.attribute;
+package category.tree.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

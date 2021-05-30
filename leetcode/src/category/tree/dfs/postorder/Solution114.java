@@ -1,4 +1,4 @@
-package category.tree.traverse;
+package category.tree.dfs.postorder;
 
 import category.tree.TreeNode;
 

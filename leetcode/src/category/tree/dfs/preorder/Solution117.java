@@ -1,8 +1,8 @@
-package category.tree.traverse;
+package category.tree.dfs.preorder;
 
 public class Solution117 {
     // Definition for a Node.
-    class Node {
+    static class Node {
         public int val;
         public Node left;
         public Node right;
@@ -20,6 +20,12 @@ public class Solution117 {
             left = _left;
             right = _right;
             next = _next;
+        }
+
+        public Node(int _val, Node _left, Node _right) {
+            val = _val;
+            left = _left;
+            right = _right;
         }
     }
 
@@ -58,6 +64,7 @@ public class Solution117 {
         if (root == null) {
             return null;
         }
+//        System.out.println(root.val);
 
         // 递归情况 1
         // 1.子节点有相同的的父节点，有子节点的情况
@@ -96,4 +103,63 @@ public class Solution117 {
         if (root.next != null) return getNext(root.next);
         return null;
     }
+
+
+    public Node connect2(Node root) {
+        if (root == null) {
+            return null;
+        }
+        connectTwoNode(root.left, root.right);
+        return root;
+    }
+
+    // FIXME: 2021/5/29 有问题 ！！！！
+    private void connectTwoNode(Node left, Node right) {
+        if (left == null || right == null) {
+            return;
+        }
+        left.next = right;
+
+        Node lLeft = left.left;
+        Node lRight = left.right;
+
+        Node rLeft = right.left;
+        Node rRight = right.right;
+        if (lLeft != null && lRight != null) {
+            connectTwoNode(lLeft, lRight);
+        }
+        if (rLeft != null && rRight != null) {
+            connectTwoNode(rLeft, rRight);
+        }
+
+        Node leftNullNode = lRight != null ? lRight : lLeft;
+        Node rightNullNode = rLeft != null ? rLeft : rRight;
+        connectTwoNode(leftNullNode, rightNullNode);
+    }
+
+    public static void main(String[] args) {
+        Node Node5 = new Node(5);
+        Node Node1 = new Node(1);
+        Node Node10 = new Node(10, Node5, Node1);
+        Node Node2 = new Node(2, Node10, null);
+
+        Node Node6 = new Node(6);
+        Node Node3 = new Node(3, null, Node6);
+
+        Node Node8 = new Node(8);
+        Node Node100 = new Node(100, null, Node8);
+
+        Node Node4 = new Node(4, Node3, Node100);
+        Node Node0 = new Node(0, Node2, Node4);
+
+        new Solution117().connect2(Node0);
+        Node res = Node5;
+        StringBuilder stringBuilder = new StringBuilder();
+        while (res != null) {
+            stringBuilder.append(res.val).append(",");
+            res = res.next;
+        }
+        System.out.println(stringBuilder.toString());
+    }
+
 }

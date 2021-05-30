@@ -1,4 +1,4 @@
-package category.tree.attribute;
+package category.tree.dfs.postorder;
 //https://leetcode-cn.com/problems/count-complete-tree-nodes/
 public class Solution222 {
     // Definition for a binary category.tree node.
