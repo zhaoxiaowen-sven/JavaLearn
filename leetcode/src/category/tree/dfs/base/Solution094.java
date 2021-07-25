@@ -6,7 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Solution094 {
-
+    String SEP = ",";
+    String NULL = "#";
     // Definition for a binary category.tree node.
     public static class TreeNode {
         int val;
@@ -68,6 +69,17 @@ public class Solution094 {
 
     }
 
+    public String serialize(TreeNode root) {
+        if (root == null) {
+            return NULL + SEP;
+        }
+        StringBuilder builder = new StringBuilder();
+        builder.append(root.val).append(SEP);
+        builder.append(serialize(root.left));
+        builder.append(serialize(root.right));
+        return builder.toString();
+    }
+
     public static void main(String[] args) {
         TreeNode treeNode2 = new TreeNode(2);
         TreeNode treeNode1 = new TreeNode(1);
@@ -77,11 +89,14 @@ public class Solution094 {
 
         List<Integer> ans = new Solution094().inorderTraversal(treeNode5);
 
-        StringBuilder stringBuilder = new StringBuilder();
-        for (int i : ans) {
-            stringBuilder.append(i);
-            stringBuilder.append(",");
-        }
-        System.out.print(stringBuilder.toString());
+//        StringBuilder stringBuilder = new StringBuilder();
+//        for (int i : ans) {
+//            stringBuilder.append(i);
+//            stringBuilder.append(",");
+//        }
+//        System.out.println(stringBuilder.toString());
+
+
+        System.out.println(new Solution094().serialize(treeNode5));
     }
 }
