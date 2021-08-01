@@ -105,7 +105,7 @@ public class BackPack {
 
         // 不同容量的背包，放入第一个物品时的价值
         // i = 1 , weigh[0] = 1,
-        // j = 4,  dp[3] = Max(dp[4], dp[4 - 1] + value [0]) = 15
+        // j = 4,  dp[4] = Max(dp[4], dp[4 - 1] + value [0]) = 15
         // j = 3,  dp[3] = Max(dp[3], dp[3 - 1] + value [0]) = 15
         // j = 2,  dp[2] = Max(dp[2], dp[2 - 1] + value [0]) = 15
         // j = 1,  dp[1] = Max(dp[1], dp[1 - 1] + value[0]) = 15
