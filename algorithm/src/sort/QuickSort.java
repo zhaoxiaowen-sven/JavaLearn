@@ -2,6 +2,13 @@ package sort;
 
 public class QuickSort {
 
+    public static void main(String[] args) {
+
+        int[] arr = new int[]{9, 1, 5, 8, 3, 7, 4, 6, 2};
+        sort0(arr);
+    }
+
+
     public static void sort0(int[] source) {
         sort(source, 0, source.length - 1);
         SortHelper.dump(source);
@@ -58,4 +65,8 @@ public class QuickSort {
             swap(source, left, m);
         }
     }
+
+
+
+
 }
