@@ -1,7 +1,9 @@
 package sort;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 
 public class QuickSort2 {
 
@@ -18,9 +20,45 @@ public class QuickSort2 {
 //                {1,2,3,4},{5,6,7,8},{9,10,11,12},
 //                {13,14,15,16}};
 //        rotate(arr);
-        int[] arr = new int[]{0,1,0,2};
-        trap(arr);
+//        int[] arr = new int[]{0,1,0,2};
+//        trap(arr);
+
+        int[] nums = new int[]{3,2,1,1,4};
+        findDisappearedNumbers(nums);
     }
+
+    public static List<Integer> findDisappearedNumbers(int[] nums) {
+        int index = 0;
+        int end = nums.length;
+
+        while (index < end) {
+            if(nums[index] == index + 1) {
+                index ++;
+            } else {
+                // 数字的值减1 就是索引的下标
+                int targetIndex = nums[index] - 1;
+                // 重复了
+                if (nums[targetIndex] == nums[index]) {
+                    index ++;
+                    continue;
+                }
+
+                // 交换
+                int temp = nums[targetIndex];
+                nums[targetIndex] = nums[index];
+                nums[index] = temp;
+            }
+        }
+
+        List<Integer> res = new ArrayList<>();
+        for(int i = 0; i < end; i++) {
+            if(nums[i] != i + 1) {
+                res.add(i + 1);
+            }
+        }
+        return res;
+    }
+
 
     public static void rotate(int[][] matrix) {
         int start = 0;
