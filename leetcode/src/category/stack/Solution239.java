@@ -36,8 +36,48 @@ public class Solution239 {
         return arr;
     }
 
+    public static int[] maxSlidingWindow2(int[] nums, int k) {
+        int[] res = new int[nums.length - k + 1];
+        Deque<Integer> st = new LinkedList<>();
+        int idx = 0;
+        for (int i = 0; i< nums.length; i++) {
+            while (!st.isEmpty() && st.peekFirst() < i - k + 1) {
+                st.removeFirst();
+            }
+            while (!st.isEmpty() && nums[st.peekLast()] < nums[i]) {
+                st.removeLast();
+            }
+
+            st.addLast(i);
+            if (i >= k - 1) {
+                res[idx++] = nums[st.peekFirst()];
+            }
+        }
+        return  res;
+//        for (int i = 0; i < k; i++) {
+//            while(!st.isEmpty() && st.peekLast() < nums[i]){
+//                st.removeLast();
+//            }
+//            st.addLast(nums[i]);
+//        }
+//        int arrIndex = 0;
+//        res[arrIndex ++] = st.peekFirst();
+//        for(int i = k; i< nums.length; i++) {
+//            while(!st.isEmpty() && st.peekLast() < nums[i]) {
+//                st.removeLast();
+//            }
+//            st.addLast(nums[i]);
+//            res[arrIndex ++] = st.peekFirst();
+//        }
+//        return res;
+    }
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 3, -1, -3, 5, 3, 6, 7};
-        System.out.println(new Solution239().maxSlidingWindow(nums, 3));
+        int[] nums = new int[]{1,-1};
+        int[] res = new Solution239().maxSlidingWindow2(nums, 1);
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i : res) {
+            stringBuilder.append(i).append(",");
+        }
+        System.out.println(stringBuilder.toString());
     }
 }

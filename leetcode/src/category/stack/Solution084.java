@@ -8,7 +8,7 @@ public class Solution084 {
 
     public static void main(String[] args) {
         //int[] nums = new int[]{2,1,5,6,2,3};
-        int[] nums = new int[]{2,1,2};
+        int[] nums = new int[]{2,2,2};
         System.out.println(new Solution084().largestRectangleArea(nums));
     }
 
@@ -32,7 +32,7 @@ public class Solution084 {
                // stack.pop();
                 stack.push(i);
             } else {
-                while (!stack.isEmpty() && h[i] < h[stack.peek()]) {
+                while (!stack.isEmpty() &&h[stack.peek()] >  h[i]) {
 //                    int mid = stack.peek();
 //                    stack.pop();
 //                    int w = i - stack.peek() - 1;

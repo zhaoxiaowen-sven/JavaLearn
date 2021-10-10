@@ -8,20 +8,16 @@ public class MergeSort {
     }
 
     private static void sort(int[] source, int left, int right) {
-        if (left >= right) {
-            return;
+        if (left < right) {
+            int center = (left + right) / 2;
+            sort(source, left, center);
+            sort(source, center + 1, right);
+            merge(source, left, center, right);
         }
-        int center = (left + right) / 2;
-        sort(source, left, center);
-        sort(source, center + 1, right);
-        merge(source, left, center, right);
     }
-
     private static void merge(int[] source, int left, int center, int right) {
         int[] tmp = new int[right - left + 1];
-        int k = 0;
-        int i = left;
-        int j = center + 1;
+        int k = 0; int i = left; int j = center + 1;
         // 从小到大排，取较小值放到tmp数组里
         while (i <= center && j <= right) {
             if (source[i] < source[j]) {
