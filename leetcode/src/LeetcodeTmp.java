@@ -22,14 +22,16 @@ public class LeetcodeTmp {
 //        int[][] mt = new int[][]{{1, 5, 9}, {6, 11, 13}, {12, 13, 15}};
 //        kthSmallest(mt, 3);
 
-      //  ListNode node3 = new ListNode(3);
-       // ListNode node1 = new ListNode(1, node3);
-        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node1 = new ListNode(1, node3);
+        ListNode node2 = new ListNode(2, node1);
         ListNode node4 = new ListNode(4, node2);
-
-        sortList(node4);
+        oddEvenList(node4);
+//        sortList(node4);
+//        Set<String> set = new HashSet<>();
+//        System.out.println(set.add("1"));
+//        System.out.println(set.add("1"));
     }
-
 
     //Definition for singly-linked list.
     static class ListNode {
@@ -47,6 +49,21 @@ public class LeetcodeTmp {
             this.val = val;
             this.next = next;
         }
+    }
+
+    public static ListNode oddEvenList(ListNode head) {
+        if(head==null||head.next==null) return head;
+        ListNode cur = head;    //cur将要串连奇数节点
+        ListNode last = cur.next;   //last将要串连偶数节点
+        ListNode lastpre = last;    //lastpre为偶数定位指针
+        while(last!=null&&last.next!=null){
+            cur.next = cur.next.next; // cur.next 被更新
+            cur = cur.next;
+            last.next = last.next.next; // last.next 被更新
+            last = last.next;
+        }
+        cur.next = lastpre;     //奇偶链表相连
+        return head;
     }
 
     public static ListNode sortList(ListNode head) {
