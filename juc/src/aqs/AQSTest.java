@@ -1,5 +1,7 @@
 package aqs;
 
+import sun.java2d.loops.GraphicsPrimitive;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -11,9 +13,10 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class AQSTest {
 
     static final MiniReentrantLock lock = new MiniReentrantLock();
-    final static ReentrantLock reentrantLock = new ReentrantLock();
+    final static ReentrantLock reentrantLock = new ReentrantLock(true);
+    static volatile long start = 0;
 
-    public static void test() {
+    public static void test() throws InterruptedException {
         //        testMiniReentrantLock();
 //        testAcquired();
 //        Thread.currentThread().interrupt();
@@ -37,7 +40,35 @@ public class AQSTest {
 //        thread2.start();
 //        System.out.println("中断了");
 //
-        JUCUtilTest.test();
+//        JUCUtilTest.test();
+        start = System.currentTimeMillis();
+        Thread thread1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+//                testInterrupt2();
+                LockSupport.park();
+                System.out.println("parkstart " + (System.currentTimeMillis() - start));
+            }
+        }, "t1");
+
+        thread1.start();
+        Thread.sleep(2000);
+        thread1.interrupt();
+
+//        Thread thread2 = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                testInterrupt2();
+//            }
+//        }, "t2");
+//
+//        System.out.println("111");
+//        thread2.start();
+//        Thread.sleep(1000);
+
+//        System.out.println("222");
+//        thread2.interrupt();
+//        System.out.println("333");
     }
 
     private static void testReadWriteLock() {
@@ -53,6 +84,27 @@ public class AQSTest {
 
 
     }
+
+    public static void testInterrupt2() {
+        String tName = Thread.currentThread().getName();
+        try {
+            System.out.println("run " + tName + ", " + (System.currentTimeMillis() - start));
+            reentrantLock.lockInterruptibly();
+            System.out.println("running " + tName + ", " + (System.currentTimeMillis() - start));
+            String s = "a";
+            for (int i = 0; i < 100 * 1000; i ++) {
+                s+="a";
+            }
+            System.out.println("run end " + tName + ", "+ (System.currentTimeMillis() - start));
+        } catch (Exception e) {
+//            System.out.println( );
+            e.printStackTrace();
+
+        } finally {
+            reentrantLock.unlock();
+        }
+    }
+
 
     public static void testInterrupt(String sleep) {
 

@@ -10,11 +10,15 @@ public class JUCTest {
 //        new CASTest().test();
 //        VolatileTest.getInstance();
 //        SynchronizedTest.test();
-//        AQSTest.test();
+        try {
+            AQSTest.test();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 //        Container.test();
 //        new ConditionTest().test();
 
-        BQTest.test();
+//        BQTest.test();
 //        QueueContainer.test();
     }
 }
