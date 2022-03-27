@@ -1,57 +1,33 @@
 package cp;
 
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class LockProConContainer {
-    Lock lock = new ReentrantLock();
-    Condition notFull = lock.newCondition();
-    Condition notEmpty = lock.newCondition();
-    Queue<Integer> queue = new LinkedList<>();
-    final int size = 10;
+    private static final int size = 5;
+    private Deque<Integer> queue = new LinkedList<>();
+    private final Lock lock = new ReentrantLock();
+    // 从唤醒的角度理解这2个名字含义
+    private final Condition notFull = lock.newCondition();
+    private final Condition notEmpty = lock.newCondition();
+
     public static void main(String[] args) {
         new LockProConContainer().start();
     }
 
     private void start() {
-        new Thread(new Consumer(),"consume01").start();
-        new Thread(new Consumer(), "consume02").start();
-        new Thread(new Producer(), "produce01").start();
-//        new Thread(new Producer(), "produce02").start();
+        Producer producer = new Producer();
+        Consumer consumer = new Consumer();
+
+        new Thread(producer, "producer01").start();
+        new Thread(consumer, "cousumer01").start();
+        new Thread(new Consumer(), "cousumer02").start();
     }
 
-    class Consumer implements Runnable {
-        @Override
-        public void run() {
-            while (true) {
-                lock.lock();
-                try {
-                    while (queue.size() == 0) {
-                        try {
-                            notEmpty.await();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    int consume = queue.poll();
-                    System.out.println(Thread.currentThread().getName() + ", consume = " + consume);
-                    notFull.signalAll();
-                } finally {
-                    lock.unlock();
-                }
-
-                try {
-                    Thread.sleep(800);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
 
     class Producer implements Runnable {
         @Override
@@ -66,15 +42,38 @@ public class LockProConContainer {
                             e.printStackTrace();
                         }
                     }
-                    queue.offer(new Random().nextInt());
-                    System.out.println(Thread.currentThread().getName() + ", producer = " + queue.peek());
-                    notEmpty.signalAll();
+                    queue.add(new Random().nextInt());
+                    System.out.println("producer-- " + Thread.currentThread().getName() + "--put:" + queue.peekFirst());
+                    notEmpty.signalAll(); // 这里注意要用singnal
                 } finally {
                     lock.unlock();
                 }
+            }
+        }
+    }
 
+    class Consumer implements Runnable {
+        @Override
+        public void run() {
+            while (true) {
+                lock.lock();
                 try {
-                    Thread.sleep(300);
+                    while (queue.size() == 0) {
+                        try {
+//                            System.out.println("the list is empty........");
+                            notEmpty.await();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    int out = queue.poll();
+                    System.out.println("consumer -- " + Thread.currentThread().getName() + "--put:" + out);
+                    notFull.signalAll();
+                } finally {
+                    lock.unlock();
+                }
+                try {
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
