@@ -1,7 +1,4 @@
 import aqs.AQSTest;
-import bq.BQTest;
-import cp.Container;
-import cp.QueueContainer;
 
 public class JUCTest {
 

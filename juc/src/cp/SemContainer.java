@@ -11,7 +11,7 @@ public class SemContainer {
     Semaphore emptyCount = new Semaphore(10);
     Semaphore isUse = new Semaphore(1);
 
-    List list = new LinkedList<Integer>();
+    List queue = new LinkedList<Integer>();
 
     public static void main(String[] args) {
 
@@ -31,9 +31,8 @@ public class SemContainer {
             // 2、锁的作用
             isUse.acquire();
 
-            list.add(val);
-            System.out.println("producer--" + Thread.currentThread().getName() + "--put:" + val + "===size:" + list.size());
-
+            System.out.println(Thread.currentThread().getName() + "生产者生产 = " + val);
+            queue.add(val);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
@@ -47,7 +46,6 @@ public class SemContainer {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
     public Integer get() {
@@ -57,16 +55,14 @@ public class SemContainer {
             fullCount.acquire();
             isUse.acquire();
 
-            val1 = (Integer) list.remove(0);
-            System.out.println("consumer--" + Thread.currentThread().getName() + "--take:" + val1 + "===size:" + list.size());
-
+            val1 = (Integer) queue.remove(0);
+            System.out.println(Thread.currentThread().getName() + " 消费者消费 = " + val1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
             isUse.release();
             emptyCount.release();
         }
-
         return val1;
     }
 }

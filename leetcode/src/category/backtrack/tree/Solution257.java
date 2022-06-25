@@ -38,49 +38,50 @@ public class Solution257 {
     }
 
     public List<String> binaryTreePaths(TreeNode root) {
-        List<String> result = new ArrayList<>();
-        if(root == null){
-            return result;
-        }
-        binaryTreePaths(root, "", result);
-        return result;
+//        List<String> result = new ArrayList<>();
+//        if(root == null){
+//            return result;
+//        }
+//        binaryTreePaths(root, "", result);
+//        return result;
 
-//        if (root == null) {
-//            return Collections.emptyList();
-//        }
-//        Queue<TreeNode> queue = new LinkedList<>();
-//        Queue<String> paths = new LinkedList<>(); // 记录遍历到的路径
-//        List<String> ans = new ArrayList<>();
-//        queue.offer(root);
-//        paths.offer(String.valueOf(root.val));
-//        while (!queue.isEmpty()) {
-//            int size = queue.size();
-//            while (size > 0) {
-//                TreeNode treeNode = queue.poll();
-//                String path = paths.poll();
-//                if (treeNode.left == null && treeNode.right == null) {
-//                    ans.add(path); // 有效路径
-//                } else {
-//                    if (treeNode.left != null) { // 层序遍历所有路径
-//                        queue.offer(treeNode.left);
-//                        paths.offer(path + "->" + treeNode.left.val);
-//                    }
-//
-//                    if (treeNode.right != null) {
-//                        queue.offer(treeNode.right);
-//                        paths.offer(path + "->" + treeNode.right.val);
-//                    }
-//                }
-//                size--;
-//            }
-//        }
-//        return ans;
+        if (root == null) {
+            return Collections.emptyList();
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<String> paths = new LinkedList<>(); // 记录遍历到的路径
+        List<String> ans = new ArrayList<>();
+        queue.offer(root);
+        paths.offer(String.valueOf(root.val));
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            while (size > 0) {
+                TreeNode treeNode = queue.poll();
+                String path = paths.poll();
+                if (treeNode.left == null && treeNode.right == null) {
+                    ans.add(path); // 有效路径
+                } else {
+                    if (treeNode.left != null) { // 层序遍历所有路径
+                        queue.offer(treeNode.left);
+                        paths.offer(path + "->" + treeNode.left.val);
+                    }
+
+                    if (treeNode.right != null) {
+                        queue.offer(treeNode.right);
+                        paths.offer(path + "->" + treeNode.right.val);
+                    }
+                }
+                size--;
+            }
+        }
+        return ans;
     }
 
     public static void main(String[] args) {
         TreeNode treeNode2 = new TreeNode(2);
         TreeNode treeNode1 = new TreeNode(1);
-        TreeNode treeNode6 = new TreeNode(6);
+        TreeNode treeNode7 = new TreeNode(7);
+        TreeNode treeNode6 = new TreeNode(6, treeNode7, null);
         TreeNode treeNode4 = new TreeNode(4, treeNode1, treeNode2);
         TreeNode treeNode5 = new TreeNode(5, treeNode4, treeNode6);
 

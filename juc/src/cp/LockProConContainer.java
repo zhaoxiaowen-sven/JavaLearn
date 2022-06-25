@@ -12,7 +12,9 @@ public class LockProConContainer {
     private Deque<Integer> queue = new LinkedList<>();
     private final Lock lock = new ReentrantLock();
     // 从唤醒的角度理解这2个名字含义
+    // 表示"不满了"，可以生产了，唤醒生产者
     private final Condition notFull = lock.newCondition();
+    // 表示生产者 "不空了"，唤醒消费者
     private final Condition notEmpty = lock.newCondition();
 
     public static void main(String[] args) {
@@ -28,23 +30,26 @@ public class LockProConContainer {
         new Thread(new Consumer(), "cousumer02").start();
     }
 
-
     class Producer implements Runnable {
         @Override
         public void run() {
             while (true) {
                 lock.lock();
                 try {
+                    // while 判断
                     while (queue.size() == size) {
                         try {
+                            // 阻塞
                             notFull.await();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                     queue.add(new Random().nextInt());
-                    System.out.println("producer-- " + Thread.currentThread().getName() + "--put:" + queue.peekFirst());
-                    notEmpty.signalAll(); // 这里注意要用singnal
+                    System.out.println(Thread.currentThread().getName() + "生产者生产 = " + queue.peekFirst());
+                    // 表示生产者 "不空了"，唤醒消费者
+                    // 这里注意要用signal
+                    notEmpty.signalAll();
                 } finally {
                     lock.unlock();
                 }
@@ -60,18 +65,20 @@ public class LockProConContainer {
                 try {
                     while (queue.size() == 0) {
                         try {
-//                            System.out.println("the list is empty........");
                             notEmpty.await();
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
                     }
                     int out = queue.poll();
-                    System.out.println("consumer -- " + Thread.currentThread().getName() + "--put:" + out);
+                    System.out.println(Thread.currentThread().getName() + " 消费者消费 = " + out);
+                    // 表示"不满了"，唤醒生产者
+                    // 不可使用notify 唤醒
                     notFull.signalAll();
                 } finally {
                     lock.unlock();
                 }
+                // 控制频率
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {

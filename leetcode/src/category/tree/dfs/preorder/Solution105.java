@@ -1,9 +1,6 @@
 package category.tree.dfs.preorder;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class Solution105 {
 
